@@ -1,0 +1,24 @@
+pane	learn-go-9	1	1	:*	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/learn-go/with-tests/structs	1	zsh	:zsh
+pane	nerdify-1	1	1	:*	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/personal-projects/nerdify/final/nerdify3	1	zsh	:
+pane	nerdify-1	2	0	:-	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/Downloads/Adam\ Wathan - Tailwind UI (Application UI + Marketing) Updated 12-2022/adamwathanss-tuibeta/react/components	1	zsh	:
+pane	nvim-10	1	1	:*	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual	1	zsh	:
+pane	php-2	1	1	:*	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/projects/php/demo-store	1	zsh	:
+pane	php-2	1	1	:*	2	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/projects/php/demo-store	0	zsh	:
+pane	pw-bank-9	1	1	:*	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/projects/clis/playwright-bank	1	zsh	:
+pane	rust-8	1	1	:*Z	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/projects/rust/rustlings	0	zsh	:/usr/local/bin/starship prompt --terminal-width=171 --keymap= --status=0 --pipestatus=0 --cmd-duration=621 --jobs=0
+pane	rust-8	1	1	:*Z	2	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/projects/rust/oop-blog	1	nvim	:zsh
+pane	tchs-7	1	1	:*	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/ts-study/type-challenges	1	zsh	:
+pane	vitest-11	1	1	:*Z	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/tmp/test-stuff/quick-vitest	1	zsh	:
+pane	vitest-11	1	1	:*Z	2	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/.config/nvim	0	zsh	:
+pane	xstate-sync	1	1	:*	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/tmp/test/remix/xstate-sync	1	zsh	:
+window	learn-go-9	1	:zsh	1	:*	c2be,171x36,0,0,1	:
+window	nerdify-1	1	:nerd2	1	:*	c2bf,171x36,0,0,2	off
+window	nerdify-1	2	:nerd1	0	:-	c2c0,171x36,0,0,3	off
+window	nvim-10	1	:zsh	1	:*	bec1,171x35,0,0,4	:
+window	php-2	1	:zsh	1	:*	57ad,171x35,0,0[171x18,0,0,5,171x16,0,19,6]	:
+window	pw-bank-9	1	:zsh	1	:*	c2c4,171x36,0,0,7	:
+window	rust-8	1	:nvim	1	:*Z	8ab5,171x36,0,0[171x16,0,0,8,171x19,0,17,9]	:
+window	tchs-7	1	:zsh	1	:*	5f8f,171x35,0,0,10	:
+window	vitest-11	1	:zsh	1	:*Z	393e,171x35,0,0{85x35,0,0,11,85x35,86,0,12}	:
+window	xstate-sync	1	:zsh	1	:*	5f92,171x35,0,0,13	:
+state	nerdify-1	vitest-11

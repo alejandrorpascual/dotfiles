@@ -1,0 +1,22 @@
+pane	nerdify-1	1	1	:*	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/personal-projects/nerdify/final/nerdify3	1	zsh	:
+pane	nerdify-1	2	0	:-	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/Downloads/Adam\ Wathan - Tailwind UI (Application UI + Marketing) Updated 12-2022/adamwathanss-tuibeta/react/components	1	zsh	:
+pane	nvim-setup-6	1	1	:*	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/.config/nvim	1	zsh	:
+pane	php-2	1	1	:*	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/projects/php/demo-store	1	zsh	:
+pane	php-2	1	1	:*	2	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/projects/php/demo-store	0	zsh	:
+pane	pw-bank-9	1	1	:*	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/projects/clis/playwright-bank	1	zsh	:
+pane	rust-8	1	1	:*Z	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/projects/rust/rustlings	0	zsh	:
+pane	rust-8	1	1	:*Z	2	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/projects/rust/minigrep	1	zsh	:
+pane	tchs-7	1	1	:*	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/ts-study/type-challenges	1	zsh	:
+pane	vitest-11	1	1	:*Z	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/tmp/test-stuff/quick-vitest	1	zsh	:
+pane	vitest-11	1	1	:*Z	2	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/.config/nvim	0	zsh	:
+pane	xstate-sync	1	1	:*	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/tmp/test/remix/xstate-sync	1	zsh	:
+window	nerdify-1	1	:nerd2	1	:*	c53e,157x36,0,0,1	off
+window	nerdify-1	2	:nerd1	0	:-	aa7f,104x30,0,0,2	off
+window	nvim-setup-6	1	:zsh	1	:*	b620,222x33,0,0,3	:
+window	php-2	1	:zsh	1	:*	cd17,104x30,0,0[104x15,0,0,5,104x14,0,16,6]	:
+window	pw-bank-9	1	:zsh	1	:*	c144,157x35,0,0,7	:
+window	rust-8	1	:zsh	1	:*Z	2f55,157x35,0,0[157x16,0,0,8,157x18,0,17,9]	:
+window	tchs-7	1	:zsh	1	:*	556f,104x30,0,0,10	:
+window	vitest-11	1	:zsh	1	:*Z	f9b0,104x30,0,0{51x30,0,0,11,52x30,52,0,12}	:
+window	xstate-sync	1	:zsh	1	:*	5572,104x30,0,0,13	:
+state	pw-bank-9	nerdify-1

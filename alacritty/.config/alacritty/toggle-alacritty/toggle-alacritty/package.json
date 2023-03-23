@@ -1,0 +1,15 @@
+{
+  "name": "toggle-alacritty",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.4",
+    "@types/node": "^16.11.7",
+    "typescript": "^4.3.2",
+    "vite": "^2.6.4"
+  }
+}

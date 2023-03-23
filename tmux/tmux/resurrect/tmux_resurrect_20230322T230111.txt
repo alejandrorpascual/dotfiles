@@ -1,0 +1,28 @@
+pane	dotfiles-10	1	1	:*	1	Alejandros-MacBook-Pro-3.local	:/Users/alejandrorpascual/dotfiles/zsh	1	nvim	:nvim /Users/alejandrorpascual/.tmux.conf
+pane	dotfiles-10	1	1	:*	2	Alejandros-MacBook-Pro-3.local	:/Users/alejandrorpascual/.config	0	zsh	:
+pane	learn-go-9	1	1	:*	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/learn-go/with-tests/structs	1	zsh	:
+pane	nerdify-1	1	1	:*	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/personal-projects/nerdify/final/nerdify3	1	zsh	:
+pane	nerdify-1	2	0	:-	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/Downloads/Adam\ Wathan - Tailwind UI (Application UI + Marketing) Updated 12-2022/adamwathanss-tuibeta/react/components	1	zsh	:
+pane	nvim-10	1	1	:*	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/.config/nvim	1	zsh	:
+pane	php-2	1	1	:*	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/projects/php/demo-store	1	zsh	:
+pane	php-2	1	1	:*	2	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/projects/php/demo-store	0	zsh	:
+pane	pw-bank-9	1	1	:*	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/projects/clis/playwright-bank	1	zsh	:
+pane	rust-8	1	0	:-	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/projects/rust/oop-blog	1	zsh	:
+pane	rust-8	2	1	:*	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/projects/rust/rustlings	1	zsh	:
+pane	tchs-7	1	1	:*	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/ts-study/type-challenges	1	zsh	:
+pane	vitest-11	1	1	:*Z	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/tmp/test-stuff/quick-vitest	1	zsh	:
+pane	vitest-11	1	1	:*Z	2	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/.config/nvim	0	zsh	:
+pane	xstate-sync	1	1	:*	1	Alejandros-MacBook-Pro.local	:/Users/alejandrorpascual/tmp/test/remix/xstate-sync	1	zsh	:
+window	dotfiles-10	1	:zsh	1	:*	e8a2,155x35,0,0{77x35,0,0,0,77x35,78,0,15}	:
+window	learn-go-9	1	:zsh	1	:*	c03e,155x35,0,0,1	:
+window	nerdify-1	1	:nerd2	1	:*	c03f,155x35,0,0,2	off
+window	nerdify-1	2	:nerd1	0	:-	c040,155x35,0,0,3	off
+window	nvim-10	1	:zsh	1	:*	c041,155x35,0,0,4	:
+window	php-2	1	:zsh	1	:*	bb0d,155x35,0,0[155x18,0,0,5,155x16,0,19,6]	:
+window	pw-bank-9	1	:zsh	1	:*	c044,155x35,0,0,7	:
+window	rust-8	1	:book	0	:-	c045,155x35,0,0,8	off
+window	rust-8	2	:rustlings	1	:*	c046,155x35,0,0,9	off
+window	tchs-7	1	:zsh	1	:*	604f,155x35,0,0,10	:
+window	vitest-11	1	:zsh	1	:*Z	a016,155x35,0,0{77x35,0,0,11,77x35,78,0,12}	:
+window	xstate-sync	1	:zsh	1	:*	6052,155x35,0,0,13	:
+state	dotfiles-10	

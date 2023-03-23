@@ -1,0 +1,141 @@
+env:
+  TERM: screen-256color
+window:
+  dimensions:
+    columns: 0
+    lines: 0
+  padding:
+    x: 0
+    y: 0
+  dynamic_padding: true
+  decorations: full
+  startup_mode: Windowed
+scrolling:
+  history: 10000
+  multiplier: 3
+font:
+  normal:
+    # Font family
+    #
+    # Default:
+    #   - (macOS) Monaco
+    #   - (Linux/BSD) monospace
+    #   - (Windows) Consolas
+    family: JetBrainsMono Nerd Font
+
+    # The `style` can be specified to pick a specific face.
+    style: Regular
+
+  bold:
+    # Font family
+    #
+    # If the bold family is not specified, it will fall back to the
+    # value specified for the normal font.
+    family: JetBrainsMono Nerd Font
+
+    # The `style` can be specified to pick a specific face.
+    style: Bold
+
+  italic:
+    # Font family
+    #
+    # If the italic family is not specified, it will fall back to the
+    # value specified for the normal font.
+    family: JetBrainsMono Nerd Font
+
+    # The `style` can be specified to pick a specific face.
+    style: Italic
+
+  bold_italic:
+    # Font family
+    #
+    # If the bold italic family is not specified, it will fall back to the
+    # value specified for the normal font.
+    family: JetBrainsMono Nerd Font
+
+    # The `style` can be specified to pick a specific face.
+    style: Bold Italic
+  size: 16.6
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+draw_bold_text_with_bright_colors: true
+
+schemes:
+  NighFox:
+    # Default colors
+    &night_fox
+    primary:
+      background: '0x192330'
+      foreground: '0xcdcecf'
+    # Normal colors
+    normal:
+      black: '0x393b44'
+      red: '0xc94f6d'
+      green: '0x81b29a'
+      yellow: '0xdbc074'
+      blue: '0x719cd6'
+      magenta: '0x9d79d6'
+      cyan: '0x63cdcf'
+      white: '0xdfdfe0'
+    # Bright colors
+    bright:
+      black: '0x475072'
+      red: '0xd6616b'
+      green: '0x58cd8b'
+      yellow: '0xffe37e'
+      blue: '0x84cee4'
+      magenta: '0xb8a1e3'
+      cyan: '0x59f0ff'
+      white: '0xf2f2f2'
+    indexed_colors:
+      - {index: 16, color: '0xf4a261'}
+      - {index: 17, color: '0xd67ad2'}
+  DawnFox:
+    # Default colors
+    &dawn_fox
+    primary:
+      background: '0xfaf4ed'
+      foreground: '0x575279'
+    # Normal colors
+    normal:
+      black: '0x575279'
+      red: '0xb4637a'
+      green: '0x618774'
+      yellow: '0xea9d34'
+      blue: '0x286983'
+      magenta: '0x907aa9'
+      cyan: '0x56949f'
+      white: '0xe5e9f0'
+    # Bright colors
+    bright:
+      black: '0x5F5695'
+      red: '0xC26D85'
+      green: '0x629F81'
+      yellow: '0xEEA846'
+      blue: '0x2D81A3'
+      magenta: '0x9A80B9'
+      cyan: '0x5CA7B4'
+      white: '0xE6EBF3'
+    indexed_colors:
+      - {index: 16, color: '0xd7827e'}
+      - {index: 17, color: '0xD685AF'}
+colors: *night_fox
+
+# background_opacity: 0.8
+window.opacity: 1
+mouse:
+  hide_when_typing: false
+selection:
+  semantic_escape_chars: ',│`|:"'' ()[]{}<>'
+  save_to_clipboard: false
+cursor:
+  style: Block
+  unfocused_hollow: true
+live_config_reload: true
+key_bindings:
+  - {key: Key6, mods: Control, chars: "\x1e"}
+  - {key: Space, mods: Control, chars: "\0"}

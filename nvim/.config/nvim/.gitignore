@@ -1,0 +1,10 @@
+
+# Created by https://www.toptal.com/developers/gitignore/api/dotfiles
+# Edit at https://www.toptal.com/developers/gitignore?templates=dotfiles
+
+#!! ERROR: dotfiles is undefined. Use list command to see defined gitignore types !!#
+
+# End of https://www.toptal.com/developers/gitignore/api/dotfiles
+lua-language-server/
+pack/
+.config
