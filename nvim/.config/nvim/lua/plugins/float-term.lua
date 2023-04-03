@@ -24,18 +24,24 @@ end
 
 return {
     "voldikss/vim-floaterm",
+    enabled = false,
     config = function()
         vim.g.floaterm_width = 0.85
         vim.g.floaterm_height = 0.85
 
         customize()
 
-        bind("n", "<leader>lg", ":FloatermNew lazygit<CR>")
-        bind("t", "<C-q>", [[<C-\><C-n>:FloatermToggle<CR>]])
-        bind("n", "<C-q>", ":FloatermToggle<CR>")
-        bind("n", "<C-t>", ":FloatermNew --wintype=vsplit --width=0.4<CR>")
-        bind("n", "<leader><leader>t", ":FloatermNew --wintype=split --height=0.3<CR>")
-        bind("n", "<leader><leader>n", ":FloatermNext<CR>")
-        bind("n", "<leader><leader>p", ":FloatermPrev<CR>")
+        bind("n", "<leader>lg", ":FloatermNew lazygit<CR>", { desc = "Floaterm Lazygit" })
+        bind("t", "<C-q>", [[<C-\><C-n>:FloatermToggle<CR>]], { desc = "Floaterm Toggle in TERM mode" })
+        bind("n", "<C-q>", ":FloatermToggle<CR>", { desc = "Floaterm Toggle in NORMAL mode" })
+        bind("n", "<C-t>", ":FloatermNew --wintype=vsplit --width=0.4<CR>", { desc = "Floaterm New in Vertical Split" })
+        bind(
+            "n",
+            "<leader><leader>t",
+            ":FloatermNew --wintype=split --height=0.3<CR>",
+            { desc = "Floaterm New in Horizontal Split" }
+        )
+        bind("n", "<leader><leader>n", ":FloatermNext<CR>", { desc = "Floaterm Next" })
+        bind("n", "<leader><leader>p", ":FloatermPrev<CR>", { desc = "Floaterm Prev" })
     end,
 }

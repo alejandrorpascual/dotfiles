@@ -13,7 +13,7 @@ end
 
 -- toggle colorscheme
 function _G.toggle_colorscheme()
-    if vim.g.colors_name == "nightfox" then
+    if vim.g.colors_name == "tokyonight" then
         vim.cmd([[colorscheme catppuccin-latte]])
         require("lualine").setup({
             options = {
@@ -22,10 +22,10 @@ function _G.toggle_colorscheme()
         })
         -- vim.cmd([[hi Normal guibg=]])
     else
-        vim.cmd([[colorscheme nightfox]])
+        vim.cmd("colorscheme tokyonight-storm")
         require("lualine").setup({
             options = {
-                theme = "nightfox",
+                theme = "tokyonight",
             },
         })
     end
@@ -47,7 +47,7 @@ _G.global_callback = global_callback or {}
 
 _G.global = {
     _store = global_callback,
-    lualineTheme = "nightfox",
+    lualineTheme = "tokyonight",
 }
 
 local reload_module = function(module_name, starts_with_only)

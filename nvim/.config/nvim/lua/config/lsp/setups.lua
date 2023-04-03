@@ -21,7 +21,9 @@ rt.setup({
         settings = {
             ["rust-analyzer"] = {
                 checkOnSave = {
+                    enable = true,
                     command = "clippy",
+                    extraArgs = { "--", "-W", "clippy::pedantic" },
                 },
             },
         },

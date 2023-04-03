@@ -11,7 +11,6 @@ export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
 export PATH=$PATH:~/.local/bin
 # export PATH=$PATH:/usr/local/Cellar/theme-check/1.9.0/bin/theme-check-language-server
 
-export OPENAI_API_KEY="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"
 
 export DOTFILES="$HOME/dotfiles"
 
@@ -38,9 +37,9 @@ export N_PRESERVE_NPM=1
 
 DEFAULT_USER=$(whoami)
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/alejandrorpascual/.oh-my-zsh"
+# export ZSH="/Users/alejandrorpascual/.oh-my-zsh"
 
-export TERM="screen-256color"
+# export TERM="xterm-256color"
 # export TERM="alacritty-direct"
 
 # colorize man pages
@@ -124,7 +123,7 @@ export NERDIFY_TODO="$HOME/personal-projects/nerdify/final/nerdify3/todo.ignored
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -151,6 +150,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# SET VOLTA
+#
+
+
 alias -g gnp="git --no-pager"
 alias -g ggh="git log --graph --oneline"
 alias -g gop="git-open"
@@ -452,9 +456,9 @@ function csjqvim() {
 export PATH="/usr/local/opt/python@3.9/libexec/bin:$PATH"
 
 # alias luamake=/Users/alejandrorpascual/.config/nvim/lang-server/3rd/luamake/luamake
-# export VOLTA_HOME="$HOME/.volta"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 # export NODE_PATH="$VOLTA_HOME/bin/node"
-# export PATH="$VOLTA_HOME/bin:$PATH"
 
 eval "$(starship init zsh)"
 
@@ -606,12 +610,14 @@ function tlw() {
         fi
 }
 
+function take() { 
+        mkdir -p $@ && cd ${@:$#}
+}
 
 
-
-fpath=(path/to/zsh-completions/src $fpath)
+fpath=($HOME/.zsh/zsh-completions/src $fpath)
 source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+ source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 bindkey '^ ' autosuggest-accept
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

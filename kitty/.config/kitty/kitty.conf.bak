@@ -1,7 +1,11 @@
-include ./theme.conf
+# include ./tokyonight_night.conf
 
 # Font configuration
 font_family      JetBrainsMono Nerd Font
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+#
 # bold_font        JetBrains Bold Nerd Font Complete Mono
 # italic_font      JetBrains Italic Nerd Font Complete Mono
 # bold_italic_font JetBrains Bold Italic Nerd Font Complete Mono
@@ -23,10 +27,10 @@ allow_hyperlinks yes
 
 allow_remote_control yes
 
-set_colors --configured ~/.config/kitty/kitty-themes/themes/NightFox.conf
+# set_colors --configured ~/.config/kitty/kitty-themes/themes/tokyonight_night.conf
 
-map F1 remote_control set-colors -a "~/.config/kitty/kitty-themes/themes/NightFox.conf"
-map F2 remote_control set-colors -a "~/.config/kitty/kitty-themes/themes/tokyonight_day.conf"
+map F1 remote_control set-colors -a "~/.config/kitty/kitty-themes/themes/tokyonight_night.conf"
+map F2 remote_control set-colors -a "~/.config/kitty/current-theme.conf"
 
 macos_option_as_alt yes
 
@@ -59,5 +63,6 @@ map f4 launch --location=split
 
 # BEGIN_KITTY_THEME
 # Catppuccin-Latte
-include current-theme.conf
+include ./kitty-themes/themes/tokyonight_night.conf
+# include current-theme.conf
 # END_KITTY_THEME
