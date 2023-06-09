@@ -1,5 +1,5 @@
 return function(client, bufnr)
-    print("Attaching to " .. client.name)
+    -- print("Attaching to " .. client.name)
 
     local ops = { buffer = bufnr, remap = false }
     local nnoremap = function(lhs, rhs)
@@ -21,7 +21,7 @@ return function(client, bufnr)
     nnoremap("<Leader>K", vim.lsp.buf.signature_help) -- builtin lsp
     nnoremap("<space>wa", vim.lsp.buf.add_workspace_folder)
     nnoremap("<space>wr", vim.lsp.buf.remove_workspace_folder)
-    nnoremap("<space>D", vim.lsp.buf.type_definition)
+    -- nnoremap("<space>D", vim.lsp.buf.type_definition)
     nnoremap("<space>rn", vim.lsp.buf.rename)
     nnoremap("<leader>sg", vim.lsp.buf.signature_help)
     nnoremap("gr", vim.lsp.buf.references)

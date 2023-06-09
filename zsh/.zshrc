@@ -18,6 +18,8 @@ export DOTFILES="$HOME/dotfiles"
 # make node_modules available in PATH
 PATH="/usr/local/bin:$PATH:./node_modules/.bin"
 
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+
 export GOPATH=$(go env GOPATH)
 export GOBIN=$GOPATH/bin
 
@@ -573,10 +575,13 @@ rgaf() {
 	open "$file"
 }
 
-# function light_theme() { 
-#     bat --theme="GitHub"
-#     delta  --syntax-theme="GitHub" --side-by-side 
-# }
+function bat_lite() { 
+    export BAT_THEME="GitHub"
+}
+
+function bat_dark() { 
+        export BAT_THEME="OneHalfDark"
+}
 
 # pnpm
 export PNPM_HOME="/Users/alejandrorpascual/Library/pnpm"
@@ -608,6 +613,14 @@ function tlw() {
         else
                 ta $(tls | fzf | sed -E 's/:.+//')
         fi
+}
+
+function gdl () { 
+        bat_lite && git diff
+}
+
+function gdd () { 
+        bat_dark && git diff
 }
 
 function take() { 
