@@ -365,6 +365,8 @@ function gcamsg() {
     git add . && git commit -m "$*"
 }
 
+function wip() { gcamsg "wip" }
+
 function gamsg() {
     git add $1 && git commit -m "${@:2}"
 }
@@ -462,7 +464,6 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 # export NODE_PATH="$VOLTA_HOME/bin/node"
 
-eval "$(starship init zsh)"
 
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the end of this file.
@@ -628,9 +629,17 @@ function take() {
 }
 
 
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME=""
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+eval "$(starship init zsh)"
+
 fpath=($HOME/.zsh/zsh-completions/src $fpath)
 source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
  source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 bindkey '^ ' autosuggest-accept
+alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v /Users/alejandrorpascual/dotfiles/lazydocker/.config/lazydocker:/.config/jesseduffield/lazydocker lazyteam/lazydocker'
+alias spt='speedtest'
