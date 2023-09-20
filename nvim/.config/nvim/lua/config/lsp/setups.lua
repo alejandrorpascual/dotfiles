@@ -79,6 +79,30 @@ return setmetatable({
             end,
             capabilities = capabilities,
             flags = lsp_flags,
+            settings = {
+                typescript = {
+                    inlayHints = {
+                        includeInlayParameterNameHints = "all",
+                        includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+                        includeInlayFunctionParameterTypeHints = true,
+                        includeInlayVariableTypeHints = true,
+                        includeInlayPropertyDeclarationTypeHints = true,
+                        includeInlayFunctionLikeReturnTypeHints = true,
+                        includeInlayEnumMemberValueHints = true,
+                    },
+                },
+                javascript = {
+                    inlayHints = {
+                        includeInlayParameterNameHints = "all",
+                        includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+                        includeInlayFunctionParameterTypeHints = true,
+                        includeInlayVariableTypeHints = true,
+                        includeInlayPropertyDeclarationTypeHints = true,
+                        includeInlayFunctionLikeReturnTypeHints = true,
+                        includeInlayEnumMemberValueHints = true,
+                    },
+                },
+            },
         }
     end,
     gopls = function()
@@ -102,6 +126,13 @@ return setmetatable({
                 client.server_capabilities.documentFormattingProvider = false
                 on_attach(client, bufnr)
             end,
+            settings = {
+                Lua = {
+                    hint = {
+                        enable = true,
+                    },
+                },
+            },
             -- -- capabilities = capabilities,
             -- flags = lsp_flags,
             -- settings = {

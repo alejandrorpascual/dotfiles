@@ -11,7 +11,7 @@ return {
                 end,
             },
         })
-        bind("n", "<leader>so", function()
+        bind("n", "<space>so", function()
             sidebar.open()
             sidebar.focus()
         end, "Open Sidebar")

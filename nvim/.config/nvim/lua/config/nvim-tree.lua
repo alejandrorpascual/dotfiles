@@ -16,6 +16,3 @@ require("nvim-tree").setup({
         },
     },
 })
-
-bind("n", "<C-n>", ":NvimTreeToggle<CR>")
-bind("n", "<Leader>nf", ":NvimTreeFindFileToggle<CR>")

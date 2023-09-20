@@ -7,6 +7,10 @@ alt - l : yabai -m window --focus east
 # rotate layout clockwise
 shift + alt - r : yabai -m space --rotate 270
 
+# # go back to previous workspace (kind of like back_and_forth in i3)
+# alt + shift - b : yabai -m space --focus recent
+#
+
 # flip along y-axis
 shift + alt - y : yabai -m space --mirror y-axis
 
@@ -53,15 +57,25 @@ shift + alt - 8 : yabai -m window --space 8;
 shift + alt - 9 : yabai -m window --space 9;
 
 # stop/start/restart yabai
-ctrl + alt - q : brew services stop yabai
-ctrl + alt - s : brew services start yabai
+# ctrl + alt - q : brew services stop yabai
+# ctrl + alt - s : brew services start yabai
 ctrl + alt - r : brew services restart yabai
+
+ctrl + alt - s : yabai -m space --layout stack
+ctrl + alt - t : yabai -m space --layout bsp
+
+# cycle through stack windows
+alt - v : yabai -m window --focus stack.next || yabai -m window --focus south
+alt - b : yabai -m window --focus stack.prev || yabai -m window --focus north
+
 
 # # float / unfloat window and center on screen
 # alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # toggle window split type
 alt - e : yabai -m window --toggle split
+
+
 
 # toggle sticky(+float), topmost, picture-in-picture
 # alt - p : yabai -m window --toggle sticky --toggle topmost --toggle pip

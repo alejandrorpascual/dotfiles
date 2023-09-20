@@ -30,6 +30,7 @@ null_ls.setup({
         formatting.gofmt,
         diagnostics.eslint_d,
         diagnostics.phpstan,
+        diagnostics.tsc,
         code_actions.refactoring,
         code_actions.eslint_d,
         formatting.prettier.with({

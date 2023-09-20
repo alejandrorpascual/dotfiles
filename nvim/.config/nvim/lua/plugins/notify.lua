@@ -5,6 +5,9 @@ return {
         -- this for transparency
         notify.setup({ background_colour = "#000000" })
         -- this overwrites the vim notify function
-        vim.notify = notify.notify
+        -- band null ls code_action complete message
+        -- local banned_messages = { "Complete" }
+
+        vim.notify = notify
     end,
 }

@@ -2,6 +2,7 @@ local lspsaga = require("lspsaga")
 
 lspsaga.setup({
     -- diagnostic_message_format = "[%s] - %m %c",
+    event = "LspAttach",
     diagnostic = {
         show_source = true,
     },

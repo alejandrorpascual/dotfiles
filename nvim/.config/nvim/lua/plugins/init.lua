@@ -73,7 +73,6 @@ return {
     -- markdown support
     { "iamcco/markdown-preview.nvim" },
 
-
     -- Automatically fix indentation when pasting code
     {
         "sickill/vim-pasta",
@@ -98,13 +97,6 @@ return {
         config = function()
             require("neoclip").setup()
         end,
-    },
-
-    {
-        "tjdevries/sg.nvim",
-        build = "cargo build --workspace",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        enabled = false
     },
 
     -- auto-pairs

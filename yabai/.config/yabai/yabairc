@@ -11,6 +11,19 @@ yabai -m config left_padding 12
 yabai -m config right_padding 12
 yabai -m config window_gap 12
 
+yabai -m signal --add event=space_changed action=" \
+    id=\$(yabai -m query --spaces --space | jq -r '.id'); \
+    type=\$(yabai -m query --spaces --space | jq -r '.type'); \
+    if [[ \"\$type\" = \"stack\" ]]; then \
+        yabai -m config bottom_padding 48 \
+        yabai -m config left_padding 48 \
+        yabai -m config right_padding 48 \
+        yabai -m config window_gap 48 \
+    else \
+        yabai -m config --space \$id window_gap 12; \
+    fi \
+ "
+
 # center mouse on window with focus
 yabai -m config mouse_follows_focus on
 
@@ -20,6 +33,8 @@ yabai -m config mouse_modifier alt
 yabai -m config mouse_action1 move
 # set modifier + right-click drag to resize window
 yabai -m config mouse_action2 resize
+
+
 
 
 # when window is dropped in center of another window, swap them (on edges it will split it)

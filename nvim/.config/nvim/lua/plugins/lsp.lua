@@ -17,11 +17,5 @@ return {
             require("config.null-ls")
         end,
     },
-    {
-        "j-hui/fidget.nvim",
-        config = function()
-            require("fidget").setup({})
-        end,
-    },
     { "onsails/lspkind-nvim" },
 }

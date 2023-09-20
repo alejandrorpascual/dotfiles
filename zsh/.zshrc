@@ -3,7 +3,13 @@
 # Please make sure this block is at the start of this file.
 #### END FIG ENV VARIABLES ####
 export PATH="/opt/homebrew/bin:$PATH"
+export PATH="~/scripts:$PATH"
 
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME=""
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+eval "$(starship init zsh)"
 # I you come from bash you might have to change your $PATH.
 #
 # export PATH=/Users/alejandrorpascual/.local/bin
@@ -629,11 +635,6 @@ function take() {
 }
 
 
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME=""
-plugins=(git)
-source $ZSH/oh-my-zsh.sh
-eval "$(starship init zsh)"
 
 fpath=($HOME/.zsh/zsh-completions/src $fpath)
 source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh
@@ -643,3 +644,24 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^ ' autosuggest-accept
 alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v /Users/alejandrorpascual/dotfiles/lazydocker/.config/lazydocker:/.config/jesseduffield/lazydocker lazyteam/lazydocker'
 alias spt='speedtest'
+
+source ~/tmp/zshenv
+
+
+# add rfv to path
+export PATH="$PATH:$HOME/scripts"
+
+function stack-p() {
+        yabai -m config top_padding 80
+        yabai -m config left_padding 256
+        yabai -m config right_padding 256
+        yabai -m config bottom_padding 80
+}
+
+
+function stack-n() {
+        yabai -m config top_padding 12
+        yabai -m config bottom_padding 12
+        yabai -m config left_padding 12
+        yabai -m config right_padding 12
+}

@@ -6,6 +6,22 @@ return function(client, bufnr)
         vim.keymap.set("n", lhs, rhs, ops)
     end
 
+    -- if client.server_capabilities.inlayHintProvider then
+    --     vim.lsp.buf.inlay_hint(bufnr, true)
+    -- end
+    -- vim.api.nvim_create_augroup("lsp_augroup", { clear = true })
+    --
+    -- vim.api.nvim_create_autocmd("InsertEnter", {
+    --   buffer = bufnr,
+    --   callback = function() vim.lsp.inlay_hint(bufnr, true) end,
+    --   group = "lsp_augroup",
+    -- })
+    -- vim.api.nvim_create_autocmd("InsertLeave", {
+    --   buffer = bufnr,
+    --   callback = function() vim.lsp.inlay_hint(bufnr, false) end,
+    --   group = "lsp_augroup",
+    -- })
+
     if client.name == "tsserver" then
         require("twoslash-queries").attach(client, bufnr)
         nnoremap("<Leader><Leader>k", "<cmd>InspectTwoslashQueries<CR>")
