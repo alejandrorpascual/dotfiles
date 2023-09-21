@@ -65,8 +65,8 @@ ctrl + alt - s : yabai -m space --layout stack
 ctrl + alt - t : yabai -m space --layout bsp
 
 # cycle through stack windows
-alt - v : yabai -m window --focus stack.next || yabai -m window --focus south
-alt - b : yabai -m window --focus stack.prev || yabai -m window --focus north
+alt - o : yabai -m window --focus stack.next || yabai -m window --focus south
+alt - i : yabai -m window --focus stack.prev || yabai -m window --focus north
 
 
 # # float / unfloat window and center on screen
