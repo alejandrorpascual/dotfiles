@@ -8,7 +8,7 @@ return {
             "n",
             "<space>ss",
             "<cmd>lua require('sg.extensions.telescope').fuzzy_search_results()<CR>",
-            { description = "Search Sourcegraph" }
+            "Search Sourcegraph"
         )
     end,
 }

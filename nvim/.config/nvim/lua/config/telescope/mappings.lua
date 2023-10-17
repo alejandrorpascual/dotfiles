@@ -49,11 +49,11 @@ function M.nvim_config()
     })
 end
 
-bind("n", "<Leader>ff", builtin.find_files)
-bind("n", "<C-p>", builtin.git_files)
+bind("n", "<Leader>ff", builtin.find_files, "Telescope Find Files")
+bind("n", "<C-p>", builtin.git_files, "Telescope Git Files")
 bind("n", "<Leader>F", function()
     builtin.find_files({ no_ignore = true, prompt_title = "All Files" })
-end)
+end, "Telescope Find All Files")
 
 bind("n", "<Leader>fB", file_browser, "Telescope File Browser Project")
 bind("n", "<Leader>fP", M.find_plugin_dir, "Telescope Plugin Dir Browser")
@@ -92,12 +92,15 @@ bind("n", "<Leader>fd", function()
     M.grep_nvim_src()
 end, "Telescope Grep Neovim Source")
 -- bind("n", "<Leader>fs", [[<cmd> lua require'config.telescope'.search_snippets()<cr>]])
-bind("n", "<Leader>tt", "<cmd>TodoTelescope<cr>")
+bind("n", "<Leader>tt", "<cmd>TodoTelescope<cr>", "Telescope Todos")
 
 -- remap to open the Telescope refactoring menu in visual mode
-bind("v", "<leader>rr", "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", {
-    desc = "Telescope Refactoring",
-})
+bind(
+    "v",
+    "<leader>rr",
+    "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
+    "Telescope Refactoring"
+)
 
 -- zoxide
-bind("n", "<Leader>z", ":lua require'telescope'.extensions.zoxide.list{}<CR>")
+bind("n", "<Leader>z", ":lua require'telescope'.extensions.zoxide.list{}<CR>", "Telescope Zoxide")

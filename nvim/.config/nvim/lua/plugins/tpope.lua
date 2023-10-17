@@ -1,5 +1,10 @@
 return {
-    "tpope/vim-surround",
+    {
+        "tpope/vim-surround",
+        config = function()
+            bind("v", "A", "<Plug>VSurround", "VSurround")
+        end,
+    },
     "tpope/vim-repeat",
     "tpope/vim-abolish",
     "tpope/vim-rhubarb",

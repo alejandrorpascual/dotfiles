@@ -47,7 +47,7 @@ return {
         keys = { { "<leader>to", "<cmd>TinkerayOpen<cr>", desc = "Open Tinkeray" } },
     },
 
-    { "p00f/nvim-ts-rainbow" },
+    -- { "p00f/nvim-ts-rainbow" },
 
     { "numToStr/FTerm.nvim" },
 
@@ -72,6 +72,7 @@ return {
 
     -- markdown support
     { "iamcco/markdown-preview.nvim" },
+
 
     -- Automatically fix indentation when pasting code
     {
@@ -98,6 +99,7 @@ return {
             require("neoclip").setup()
         end,
     },
+
 
     -- auto-pairs
     {

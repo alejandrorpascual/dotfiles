@@ -1,7 +1,7 @@
 require("nvim-tree").setup({
     update_cwd = true,
     view = {
-        width = 45,
+        width = 55,
         side = "right",
     },
     renderer = {

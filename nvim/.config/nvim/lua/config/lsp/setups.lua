@@ -83,18 +83,19 @@ return setmetatable({
                 typescript = {
                     inlayHints = {
                         includeInlayParameterNameHints = "all",
-                        includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+                        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
                         includeInlayFunctionParameterTypeHints = true,
                         includeInlayVariableTypeHints = true,
                         includeInlayPropertyDeclarationTypeHints = true,
                         includeInlayFunctionLikeReturnTypeHints = true,
                         includeInlayEnumMemberValueHints = true,
+                        importModuleSpecifierPreference = "non-relative",
                     },
                 },
                 javascript = {
                     inlayHints = {
                         includeInlayParameterNameHints = "all",
-                        includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+                        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
                         includeInlayFunctionParameterTypeHints = true,
                         includeInlayVariableTypeHints = true,
                         includeInlayPropertyDeclarationTypeHints = true,

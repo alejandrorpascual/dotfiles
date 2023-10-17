@@ -2,21 +2,23 @@
 return {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
-        require("indent_blankline").setup({
-            char = "┊",
-            show_trailing_blankline_indent = false,
-            space_char_blankline = " ",
-            filetype_exclude = {
-                "help",
-                "terminal",
-                "packer",
-                "lspinfo",
-                "TelescopePrompt",
-                "TelescopeResults",
+        require("ibl").setup({
+            indent = {
+                char = "┊",
             },
-            buftype_exclude = {
-                "terminal",
-                "NvimTree",
+            exclude = {
+                filetypes = {
+                    "help",
+                    "terminal",
+                    "packer",
+                    "lspinfo",
+                    "TelescopePrompt",
+                    "TelescopeResults",
+                },
+                buftypes = {
+                    "terminal",
+                    "NvimTree",
+                },
             },
         })
     end,

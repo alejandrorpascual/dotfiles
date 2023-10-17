@@ -22,7 +22,10 @@ null_ls.setup({
     sources = {
         formatting.stylua,
         formatting.prettierd,
-        formatting.autopep8,
+        formatting.black.with({
+            extra_args = { "--fast" },
+        }),
+        -- formatting.autopep8,
         -- formatting.sql_formatter,
         -- formatting.prismaFmt,
         -- formatting.gofmt,
@@ -31,11 +34,18 @@ null_ls.setup({
         diagnostics.eslint_d,
         diagnostics.phpstan,
         diagnostics.tsc,
+        -- diagnostics.pylint.with({
+        --     prefer_local = "venv/bin",
+        -- }),
+        diagnostics.mypy.with({
+            prefer_local = "venv/bin",
+        }),
+        diagnostics.ruff,
         code_actions.refactoring,
         code_actions.eslint_d,
-        formatting.prettier.with({
-            filetypes = { "liquid" },
-        }),
+        -- formatting.prettier.with({
+        --     filetypes = { "liquid" },
+        -- }),
         formatting.pint,
         h.make_builtin({
             name = "blade_formatter",

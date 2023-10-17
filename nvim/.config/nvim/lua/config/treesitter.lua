@@ -2,9 +2,9 @@
 -- https://alpha2phi.medium.com/neovim-tips-for-a-better-coding-experience-part-2-3b6a5a09d7c8
 
 require("nvim-treesitter.configs").setup({
+    auto_install = true,
     ensure_installed = {
         "bash",
-        "help",
         "javascript",
         "typescript",
         "lua",
@@ -53,6 +53,11 @@ require("nvim-treesitter.configs").setup({
                 ["if"] = "@function.inner",
                 ["ac"] = "@class.outer",
                 ["ic"] = "@class.inner",
+                ["ii"] = "@conditional.inner",
+                ["ai"] = "@conditional.outer",
+                ["il"] = "@loop.inner",
+                ["al"] = "@loop.outer",
+                ["ao"] = "@comment.outer",
             },
         },
         -- swap parameters function(x, y) -> function(y, x)
@@ -79,6 +84,16 @@ require("nvim-treesitter.configs").setup({
             goto_previous_end = {
                 ["[M"] = "@function.outer",
                 ["[]"] = "@class.outer",
+            },
+            goto_next = {
+                ["]i"] = "@conditional.inner",
+                ["]l"] = "@loop.outer",
+                ["]o"] = "@comment.outer",
+            },
+            goto_previous = {
+                ["[i"] = "@conditional.inner",
+                ["[l"] = "@loop.outer",
+                ["[o"] = "@comment.outer",
             },
         },
         -- peek at function definitions

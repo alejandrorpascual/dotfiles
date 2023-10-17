@@ -25,61 +25,46 @@ function M.setup()
     vim.fn.sign_define("DapBreakpoint", { text = "🟥", texthl = "", linehl = "", numhl = "" })
     vim.fn.sign_define("DapStopped", { text = "⭐️", texthl = "", linehl = "", numhl = "" })
 
-    bind("n", "<leader>dsv", '<cmd>lua require"dap".step_over()<CR>', { desc = "DAP: Step over" })
-    bind("n", "<leader>dco", '<cmd>lua require"dap".continue()<CR>', { desc = "DAP: Continue" })
-    bind("n", "<leader>dsi", '<cmd>lua require"dap".step_into()<CR>', { desc = "DAP: Step into" })
-    bind("n", "<leader>dso", '<cmd>lua require"dap".step_out()<CR>', { desc = "DAP: Step out" })
-    bind("n", "<leader>dtb", '<cmd>lua require"dap".toggle_breakpoint()<CR>', { desc = "DAP: Toggle breakpoint" })
+    bind("n", "<leader>dsv", '<cmd>lua require"dap".step_over()<CR>', "DAP: Step over")
+    bind("n", "<leader>dco", '<cmd>lua require"dap".continue()<CR>', "DAP: Continue")
+    bind("n", "<leader>dsi", '<cmd>lua require"dap".step_into()<CR>', "DAP: Step into")
+    bind("n", "<leader>dso", '<cmd>lua require"dap".step_out()<CR>', "DAP: Step out")
+    bind("n", "<leader>dtb", '<cmd>lua require"dap".toggle_breakpoint()<CR>', "DAP: Toggle breakpoint")
     bind(
         "n",
         "<leader>dsbr",
         '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>',
-        { desc = "DAP: Set breakpoint" }
+        "DAP: Set breakpoint"
     )
     bind(
         "n",
         "<leader>dsbm",
         '<cmd>lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<CR>',
-        { desc = "DAP: Set log point" }
+        "DAP: Set log point"
     )
-    bind("n", "<leader>dro", '<cmd>lua require"dap".repl.open()<CR>', { desc = "DAP: Open REPL" })
-    bind("n", "<leader>drl", '<cmd>lua require"dap".repl.run_last()<CR>', { desc = "DAP: Run last REPL command" })
+    bind("n", "<leader>dro", '<cmd>lua require"dap".repl.open()<CR>', "DAP: Open REPL")
+    bind("n", "<leader>drl", '<cmd>lua require"dap".repl.run_last()<CR>', "DAP: Run last REPL command")
 
     -- telescope-dap
-    bind(
-        "n",
-        "<leader>dcc",
-        '<cmd>lua require"telescope".extensions.dap.commands{}<CR>',
-        { desc = "Telescope: DAP commands" }
-    )
+    bind("n", "<leader>dcc", '<cmd>lua require"telescope".extensions.dap.commands{}<CR>', "Telescope: DAP commands")
     bind(
         "n",
         "<leader>dcf",
         '<cmd>lua require"telescope".extensions.dap.configurations{}<CR>',
-        { desc = "Telescope: DAP configurations" }
+        "Telescope: DAP configurations"
     )
     bind(
         "n",
         "<leader>dlb",
         '<cmd>lua require"telescope".extensions.dap.list_breakpoints{}<CR>',
-        { desc = "Telescope: DAP list breakpoints" }
+        "Telescope: DAP list breakpoints"
     )
-    bind(
-        "n",
-        "<leader>dv",
-        '<cmd>lua require"telescope".extensions.dap.variables{}<CR>',
-        { desc = "Telescope: DAP variables" }
-    )
-    bind(
-        "n",
-        "<leader>df",
-        '<cmd>lua require"telescope".extensions.dap.frames{}<CR>',
-        { desc = "Telescope: DAP frames" }
-    )
+    bind("n", "<leader>dv", '<cmd>lua require"telescope".extensions.dap.variables{}<CR>', "Telescope: DAP variables")
+    bind("n", "<leader>df", '<cmd>lua require"telescope".extensions.dap.frames{}<CR>', "Telescope: DAP frames")
 
-    bind("n", "<leader>dsr", '<cmd>lua require"dap".restart()<CR>', { desc = "DAP: Restart" })
+    bind("n", "<leader>dsr", '<cmd>lua require"dap".restart()<CR>', "DAP: Restart")
     -- toggle dap ui
-    bind("n", "<leader>dtu", '<cmd>lua require"dapui".toggle()<CR>', { desc = "DAP: Toggle UI" })
+    bind("n", "<leader>dtu", '<cmd>lua require"dapui".toggle()<CR>', "DAP: Toggle UI")
 end
 
 return M

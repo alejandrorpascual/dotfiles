@@ -15,6 +15,7 @@ eval "$(starship init zsh)"
 # export PATH=/Users/alejandrorpascual/.local/bin
 export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
 export PATH=$PATH:~/.local/bin
+export PATH=$PATH:/Users/alejandrorpascual/.local/share/bob/nvim-bin
 # export PATH=$PATH:/usr/local/Cellar/theme-check/1.9.0/bin/theme-check-language-server
 
 
@@ -173,8 +174,6 @@ alias -g nvrc="nvim ~/.vimrc"
 alias -g pip="pip3"
 alias -g regexref="perldoc perlreref"
 alias -g exerconf="vim /Users/alejandrorpascual/.config/exercism"
-alias -g python="python3.9"
-alias -g ppython="ptpython"
 alias -g cvenv="~/svenv.sh"
 alias -g st="speed-test"
 alias -g sc="mit-scheme"
@@ -463,7 +462,6 @@ function csjqvim() {
 #     export TERMCS="light"
 # fi
 
-export PATH="/usr/local/opt/python@3.9/libexec/bin:$PATH"
 
 # alias luamake=/Users/alejandrorpascual/.config/nvim/lang-server/3rd/luamake/luamake
 export VOLTA_HOME="$HOME/.volta"
@@ -658,10 +656,17 @@ function stack-p() {
         yabai -m config bottom_padding 80
 }
 
-
 function stack-n() {
-        yabai -m config top_padding 12
-        yabai -m config bottom_padding 12
-        yabai -m config left_padding 12
-        yabai -m config right_padding 12
+    local padding=${1:-12}
+
+    yabai -m config top_padding $padding
+    yabai -m config bottom_padding $padding
+    yabai -m config left_padding $padding
+    yabai -m config right_padding $padding
 }
+
+export PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
+
+export JUPYTER_PATH=/opt/homebrew/share/jupyter 
+export JUPYTER_CONFIG_PATH=/opt/homebrew/etc/jupyter
+

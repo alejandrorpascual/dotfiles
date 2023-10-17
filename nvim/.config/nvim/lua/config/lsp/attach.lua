@@ -6,9 +6,11 @@ return function(client, bufnr)
         vim.keymap.set("n", lhs, rhs, ops)
     end
 
-    -- if client.server_capabilities.inlayHintProvider then
-    --     vim.lsp.buf.inlay_hint(bufnr, true)
-    -- end
+
+
+    if client.server_capabilities.inlayHintProvider then
+        vim.lsp.inlay_hint(bufnr, true)
+    end
     -- vim.api.nvim_create_augroup("lsp_augroup", { clear = true })
     --
     -- vim.api.nvim_create_autocmd("InsertEnter", {

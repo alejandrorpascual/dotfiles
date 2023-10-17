@@ -122,6 +122,18 @@ augroup no_number_term
 augroup END
 ]])
 
+-- -- function toggle_inlay_hints(...)
+--     -- body
+-- end
+
+local toggle_inlay_hints = function()
+    -- get buffer number
+    local buf = vim.api.nvim_get_current_buf()
+    vim.lsp.inlay_hint(buf, nil)
+end
+
+bind("n", "<leader>i", toggle_inlay_hints)
+
 vim.cmd([[
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"

@@ -15,6 +15,12 @@ local light_scheme = "Catppuccin Latte"
 local dark_scheme = "Tokyo Night Storm (Gogh)"
 local default_color_scheme = dark_scheme
 
+wezterm.on("dark-mode", function(window, pane)
+	local overrides = window:get_config_overrides() or {}
+	overrides.color_scheme = dark_scheme
+	window:set_config_overrides(overrides)
+end)
+
 wezterm.on("toggle-dark-mode", function(window, pane)
 	local overrides = window:get_config_overrides() or {}
 
@@ -35,7 +41,11 @@ config.color_scheme = default_color_scheme
 config.keys = {
 	{
 		key = "F1",
-		action = wezterm.action({ EmitEvent = "toggle-dark-mode" }),
+		action = wezterm.action.EmitEvent("toggle-dark-mode"),
+	},
+	{
+		key = "F2",
+		action = wezterm.action.EmitEvent("dark-mode"),
 	},
 	{
 		key = "n",

@@ -5,30 +5,18 @@ function _G.dump(...)
 end
 
 function _G.bind(mode, trigger, target, desc)
-    local opts = { noremap = true, silent = true, desc = "" }
+    local opts = {
+        noremap = true,
+        silent = true,
+        desc = desc or "default description",
+    }
 
-    desc = desc or ""
-    vim.keymap.set(mode, trigger, target, vim.tbl_extend("force", opts, { desc = desc }))
+    vim.keymap.set(mode, trigger, target, opts)
 end
 
 -- toggle colorscheme
 function _G.toggle_colorscheme()
-    if vim.g.colors_name == "tokyonight" then
-        vim.cmd([[colorscheme catppuccin-latte]])
-        require("lualine").setup({
-            options = {
-                theme = "catppuccin",
-            },
-        })
-        -- vim.cmd([[hi Normal guibg=]])
-    else
-        vim.cmd("colorscheme tokyonight-storm")
-        require("lualine").setup({
-            options = {
-                theme = "tokyonight",
-            },
-        })
-    end
+    vim.o.background = vim.o.background == "dark" and "light" or "dark"
 end
 
 function _G.execute_code()

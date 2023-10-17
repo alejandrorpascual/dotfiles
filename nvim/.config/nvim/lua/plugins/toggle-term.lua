@@ -34,7 +34,9 @@ return {
         --         direction = "horizontal",
         --     }):toggle()
         -- end)
-        bind("n", "<C-t>", "<Cmd>ToggleTerm direction=vertical<CR>")
-        bind("n", "<Leader><Leader>t", "<Cmd>ToggleTerm direction=horizontal<CR>")
+        bind("n", "<C-t>", "<Cmd>ToggleTerm direction=vertical<CR>", "toggle vertical terminal")
+        bind("n", "<Leader><Leader>t", "<Cmd>ToggleTerm direction=horizontal<CR>", "toggle horizontal terminal")
+        -- toggle float terminal
+        bind("n", "<Leader>qt", "<Cmd>ToggleTerm direction=float<CR>", "float terminal")
     end,
 }
