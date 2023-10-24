@@ -27,27 +27,27 @@ tele.setup({
             n = { ["<c-t>"] = trouble.open_with_trouble },
         },
 
-        layout_config = {
-            -- MINE
-            -- horizontal = {
-            --   preview_width = 68,
-            -- },
-            -- vertical = {
-            --   mirror = false,
-            -- },
-            -- CodeSmell's
-            prompt_position = "bottom",
-            horizontal = {
-                width_padding = 0.04,
-                height_padding = 0.1,
-                preview_width = 0.6,
-            },
-            vertical = {
-                width_padding = 0.05,
-                height_padding = 1,
-                preview_height = 0.5,
-            },
-        },
+        -- layout_config = {
+        --     -- MINE
+        --     -- horizontal = {
+        --     --   preview_width = 68,
+        --     -- },
+        --     -- vertical = {
+        --     --   mirror = false,
+        --     -- },
+        --     -- CodeSmell's
+        --     prompt_position = "bottom",
+        --     horizontal = {
+        --         width_padding = 0.04,
+        --         height_padding = 0.1,
+        --         preview_width = 0.6,
+        --     },
+        --     vertical = {
+        --         width_padding = 0.05,
+        --         height_padding = 1,
+        --         preview_height = 0.5,
+        --     },
+        -- },
     },
     pickers = {
         find_files = {

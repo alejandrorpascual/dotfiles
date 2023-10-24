@@ -1,22 +1,60 @@
 return {
-    {
-        "neovim/nvim-lspconfig",
-        dependencies = {
-            "wbthomason/lsp-status.nvim",
-            "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+        "nvimtools/none-ls.nvim",
+        -- "jose-elias-alvarez/null-ls.nvim",
+        {
             "williamboman/mason.nvim",
-            "jose-elias-alvarez/typescript.nvim",
-            "b0o/schemastore.nvim",
-            "folke/neodev.nvim",
-            -- "jose-elias-alvarez/null-ls.nvim",
-            "nvimtools/none-ls.nvim",
-            "jayp0521/mason-null-ls.nvim",
-            "simrat39/rust-tools.nvim",
+            opts = {
+                ui = {
+                    border = "rounded",
+                },
+            },
         },
-        config = function()
-            require("config.lsp")
-            require("config.null-ls")
-        end,
+        "b0o/schemastore.nvim",
+        "folke/neodev.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "jayp0521/mason-null-ls.nvim",
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
-    { "onsails/lspkind-nvim" },
+    -- event = "VeryLazy",
+    main = "config.lsp",
+    opts = {
+        mason = {
+            enable = true,
+            auto_install = true,
+        },
+    },
 }
+
+-- return {
+--         "neovim/nvim-lspconfig",
+--         -- event =  "VeryLazy",
+--         dependencies = {
+--             "wbthomason/lsp-status.nvim",
+--             "nvimtools/none-ls.nvim",
+--             {"williamboman/mason.nvim",
+--                 opts = {
+--                     ui = {
+--                         border = "rounded"
+--                     }
+--                 }
+--             },
+--             "williamboman/mason-lspconfig.nvim",
+--             "jose-elias-alvarez/typescript.nvim",
+--             "folke/neodev.nvim",
+--             -- "jose-elias-alvarez/null-ls.nvim",
+--             "jayp0521/mason-null-ls.nvim",
+--             "simrat39/rust-tools.nvim",
+--         },
+--         event = "VeryLazy",
+--         main = "config.lsp",
+--         opts = {
+--             mason = {
+--                 enable = true,
+--                 auto_install = false,
+--             },
+--         },
+--         { "onsails/lspkind-nvim" },
+-- }

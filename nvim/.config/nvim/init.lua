@@ -1,9 +1,9 @@
 if vim.g.vscode then
-  return
+    return
 end
 
 require("utils")
 require("settings")
 require("config.lazy")
-require("keymappings")
 require("config.diagnostics")
+require("keymappings")

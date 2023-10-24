@@ -16,7 +16,7 @@ bind("n", "<leader>tn", ":vsplit term://node<CR>", "Open Node Repl in VSplit")
 bind("n", "<leader>tt", ":vsplit term://nr test:integration<CR>", "Open `test:integration` in VSplit")
 bind("n", "<leader>tc", ":vsplit term://cargo run<CR>", "Open `cargo run` in VSplit")
 
-bind("n", "<Leader>h", ":set hlsearch!<CR>", "Toggle Highlight")
+bind("n", "<leader>hh", ":set hlsearch!<CR>", "Toggle Highlight")
 
 -- better indenting
 bind("v", "<", "<gv")
@@ -39,7 +39,7 @@ bind("n", "<C-W>o", "<cmd>lua vim.o.ls=0<CR>")
 bind("n", "<C-W>O", "<cmd>lua vim.o.ls=2<CR>")
 
 -- BUFFERS
-bind("n", "<Leader>ba", "<cmd>:%bd|e#|bd#<CR>")
+bind("n", "<leader>ba", "<cmd>:%bd|e#|bd#<CR>")
 
 -- rapid actions
 bind("n", ",co", [[yiwoconsole.log(<C-R>")<esc>]], "Next line console.log")
@@ -79,13 +79,13 @@ bind("n", "N", "Nzzzv")
 
 -- its like iw text object but for lines
 bind("n", "vil", "v_og_")
-bind("n", "<Leader>vil", "vg_o_")
+bind("n", "<leader>vil", "vg_o_")
 
 -- toggle colorscheme
 -- bind("n", "<C-C>", "<cmd>lua toggle_colorscheme()<cr>")
 
 -- toggle colorscheme
-bind("n", "<Leader>E", "<cmd>lua execute_code()<cr>")
+bind("n", "<leader>E", "<cmd>lua execute_code()<cr>")
 
 vim.cmd([[
 " Primeagen suggestion
