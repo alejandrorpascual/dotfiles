@@ -34,7 +34,7 @@ wezterm.on("toggle-dark-mode", function(window, pane)
 end)
 
 -- set the font size to 12.5
-config.font_size = 12
+config.font_size = 14
 
 -- For example, changing the color scheme:
 config.color_scheme = default_color_scheme
@@ -60,7 +60,7 @@ config.keys = {
 }
 
 -- make line_height bigger
-config.line_height = 2.0
+config.line_height = 1.2
 
 -- use jet brains mono nerd font
 config.font = wezterm.font("JetBrains Mono")
