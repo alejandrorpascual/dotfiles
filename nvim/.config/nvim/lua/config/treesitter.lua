@@ -39,10 +39,6 @@ require("nvim-treesitter.configs").setup({
         updatetime = 25,
         persist_queries = false,
     },
-    context_commentstring = {
-        enable = true,
-        enable_autocmd = false,
-    },
     textobjects = {
         select = {
             enable = true,

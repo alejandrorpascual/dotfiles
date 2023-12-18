@@ -17,6 +17,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:/Users/alejandrorpascual/.local/share/bob/nvim-bin
 # export PATH=$PATH:/usr/local/Cellar/theme-check/1.9.0/bin/theme-check-language-server
+export HISTCONTROL=ignoredups
 
 
 export DOTFILES="$HOME/dotfiles"
@@ -163,7 +164,20 @@ plugins=(git)
 # SET VOLTA
 #
 
+CDPATH=$HOME
+CDPATH=$CDPATH:$HOME/tmp
+CDPATH=$CDPATH:$HOME/learn-go
+CDPATH=$CDPATH:$HOME/learn-rust
+CDPATH=$CDPATH:$HOME/learn-docker
+CDPATH=$CDPATH:$DOTFILES/nvim/.config/nvim/
 
+CDPATH=$CDPATH:..
+
+alias -g dirs="dirs -v"
+alias pd="pushd"
+alias po="popd"
+
+# alias -g rm='rm -i'
 alias -g gnp="git --no-pager"
 alias -g ggh="git log --graph --oneline"
 alias -g gop="git-open"
@@ -225,6 +239,9 @@ alias -g palm="php artisan livewire:make"
 alias -g pamco="php artisan make:component"
 alias -g pn="pnpm"
 alias -g l="ls --long --header --icons --git --all"
+alias -g dub="docker-compose up --build"
+alias -g dud="docker-compose up -d"
+alias -g dup="docker-compose up"
 
 set -o vi
 
@@ -679,3 +696,5 @@ export SHELLBOT_PROMPT='
   setup instructions. Questions will be asked using Markdown, and you should
   feel free to use Markdown syntax in your replies.
 '
+# Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"

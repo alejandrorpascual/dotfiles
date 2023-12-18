@@ -79,7 +79,7 @@ cmp.setup({
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         -- ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-        ["<C-Space>"] = cmp.mapping(function(fallback)
+        ["<C-Space>"] = cmp.mapping(function()
             if cmp.visible() then
                 cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })
             else
@@ -97,16 +97,17 @@ cmp.setup({
         -- }),
     }),
     sources = cmp.config.sources({
-        { name = "jupynium", priority = 1000 },
-        { name = "nvim_lsp", priority = 100 },
-        { name = "luasnip", priority = 90 },
-        { name = "buffer", priority = 80 },
-        { name = "path", priority = 70 },
-        { name = "nvim_lua", priority = 60 },
+        { name = "nvim_lsp",   priority = 100 },
+        { name = "cody" },
+        { name = "luasnip",    priority = 90 },
+        { name = "buffer",     priority = 80 },
+        { name = "path",       priority = 70 },
+        { name = "nvim_lua",   priority = 60 },
         { name = "treesitter", priority = 50 },
-        { name = "emoji", priority = 40 },
-        { name = "calc", priority = 30 },
-        { name = "copilot", priority = 20 },
+        { name = "emoji",      priority = 40 },
+        { name = "calc",       priority = 30 },
+        { name = "copilot",    priority = 20 },
+        { name = "jupynium",   priority = 1000 },
     }),
     sorting = {
         priority_weight = 2,
