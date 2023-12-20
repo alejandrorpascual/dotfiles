@@ -7,9 +7,19 @@ export PATH="~/scripts:$PATH"
 
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=""
-plugins=(git)
+
+
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git docker docker-compose volta golang httpie tmux node rust)
 source $ZSH/oh-my-zsh.sh
 eval "$(starship init zsh)"
+
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
 # I you come from bash you might have to change your $PATH.
 #
 # export PATH=/Users/alejandrorpascual/.local/bin
@@ -126,12 +136,6 @@ export NERDIFY_TODO="$HOME/personal-projects/nerdify/final/nerdify3/todo.ignored
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
 
 # source $ZSH/oh-my-zsh.sh
 

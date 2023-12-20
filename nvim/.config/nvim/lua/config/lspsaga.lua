@@ -2,13 +2,10 @@ local lspsaga = require("lspsaga")
 
 lspsaga.setup({
     -- diagnostic_message_format = "[%s] - %m %c",
-    event = "LspAttach",
+    -- event = "LspAttach",
     diagnostic = {
         show_source = true,
     },
-    -- symbol_in_winbar = {
-    --     enable = false,
-    -- },
 })
 
 bind("n", "<Leader>e", "<cmd>Lspsaga show_line_diagnostics<CR>")

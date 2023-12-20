@@ -17,6 +17,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         "jayp0521/mason-null-ls.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
+        "nvimdev/lspsaga.nvim",
     },
     -- event = "VeryLazy",
     main = "config.lsp",
