@@ -1,5 +1,6 @@
 return {
     "gsuuon/llm.nvim",
+    enabled = false,
     config = function()
         require("llm").setup({})
         require("llm.providers.openai").initialize({

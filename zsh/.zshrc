@@ -14,8 +14,9 @@ ZSH_THEME=""
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose volta golang httpie tmux node rust)
 source $ZSH/oh-my-zsh.sh
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+plugins=(git docker docker-compose volta golang httpie tmux node rust zsh-autosuggestions)
 eval "$(starship init zsh)"
 
 zstyle ':completion:*:*:docker:*' option-stacking yes
@@ -655,10 +656,7 @@ function take() {
 
 
 
-fpath=($HOME/.zsh/zsh-completions/src $fpath)
-source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
- source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 bindkey '^ ' autosuggest-accept
 alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v /Users/alejandrorpascual/dotfiles/lazydocker/.config/lazydocker:/.config/jesseduffield/lazydocker lazyteam/lazydocker'
