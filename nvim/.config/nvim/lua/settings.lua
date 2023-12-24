@@ -7,6 +7,10 @@ set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
   \,sm:block-blinkwait175-blinkoff150-blinkon175
 ]])
 
+vim.o.textwidth = 75
+vim.cmd([[set formatoptions-=t]])
+-- vim.o.formatoptions -= "t"
+
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true

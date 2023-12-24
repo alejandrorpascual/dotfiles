@@ -17,6 +17,10 @@ return {
         "fhill2/telescope-ultisnips.nvim",
         "jvgrootveld/telescope-zoxide",
         "xiyaowong/telescope-emoji.nvim",
+        {
+            "fdschmidt93/telescope-egrepify.nvim",
+            dependencies = { "nvim-lua/plenary.nvim" }
+        }
     },
     config = function()
         require("config.telescope")

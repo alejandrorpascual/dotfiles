@@ -88,3 +88,4 @@ tele.load_extension("emoji")
 -- load refactoring Telescope extension
 tele.load_extension("refactoring")
 tele.load_extension("file_browser")
+tele.load_extension("egrepify")
