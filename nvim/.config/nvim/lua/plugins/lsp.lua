@@ -3,7 +3,7 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         "nvimtools/none-ls.nvim",
-        -- "jose-elias-alvarez/null-ls.nvim",
+        event = "VeryLazy",
         {
             "williamboman/mason.nvim",
             opts = {
@@ -19,7 +19,6 @@ return {
         "WhoIsSethDaniel/mason-tool-installer.nvim",
         "nvimdev/lspsaga.nvim",
     },
-    -- event = "VeryLazy",
     main = "config.lsp",
     opts = {
         mason = {
@@ -28,34 +27,3 @@ return {
         },
     },
 }
-
--- return {
---         "neovim/nvim-lspconfig",
---         -- event =  "VeryLazy",
---         dependencies = {
---             "wbthomason/lsp-status.nvim",
---             "nvimtools/none-ls.nvim",
---             {"williamboman/mason.nvim",
---                 opts = {
---                     ui = {
---                         border = "rounded"
---                     }
---                 }
---             },
---             "williamboman/mason-lspconfig.nvim",
---             "jose-elias-alvarez/typescript.nvim",
---             "folke/neodev.nvim",
---             -- "jose-elias-alvarez/null-ls.nvim",
---             "jayp0521/mason-null-ls.nvim",
---             "simrat39/rust-tools.nvim",
---         },
---         event = "VeryLazy",
---         main = "config.lsp",
---         opts = {
---             mason = {
---                 enable = true,
---                 auto_install = false,
---             },
---         },
---         { "onsails/lspkind-nvim" },
--- }

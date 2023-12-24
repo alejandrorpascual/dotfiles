@@ -4,7 +4,7 @@ if not null_ls_status_ok then
 end
 
 -- local completion = null_ls.builtins.completion
--- local code_actions = null_ls.builtins.code_actions
+local code_actions = null_ls.builtins.code_actions
 -- local h = require("null-ls.helpers")
 -- local methods = require("null-ls.methods")
 
@@ -33,5 +33,10 @@ null_ls.setup({
         diagnostics.tsc,
         formatting.prettierd,
         diagnostics.eslint_d,
+        -- add code actions
+        code_actions.eslint_d,
+        code_actions.gitsigns,
+        code_actions.refactoring
+
     },
 })
