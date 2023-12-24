@@ -80,6 +80,7 @@
   "splitjoin.vim": { "branch": "main", "commit": "53962443e4dc557e4d4c02b501adfcb5cd1368c3" },
   "sqlite.lua": { "branch": "master", "commit": "b7e28c8463254c46a8e61c52d27d6a2040492fc3" },
   "styler.nvim": { "branch": "main", "commit": "d5b7e43af4fdaa06e4175c84f4f57b633ae7e6ff" },
+  "sunglasses.nvim": { "branch": "main", "commit": "63a0b4914da3cd200ba1c55bd3231ddef14fc5fa" },
   "symbols-outline.nvim": { "branch": "master", "commit": "512791925d57a61c545bc303356e8a8f7869763c" },
   "tabular": { "branch": "master", "commit": "339091ac4dd1f17e225fe7d57b48aff55f99b23a" },
   "targets.vim": { "branch": "master", "commit": "642d3a4ce306264b05ea3219920b13ea80931767" },
