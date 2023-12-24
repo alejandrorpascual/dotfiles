@@ -49,7 +49,8 @@ function M.nvim_config()
     })
 end
 
-local opts = { layout_strategy = "vertical", layout_config = { width = 0.65, prompt_position = "top" }, sorting_strategy = "ascending" }
+local opts = { layout_strategy = "vertical", layout_config = { width = 0.65, prompt_position = "top" },
+    sorting_strategy = "ascending" }
 
 bind("n", "<Leader>ff", function()
     builtin.find_files(opts)
@@ -61,7 +62,8 @@ bind("n", "<leader>ds", function()
     builtin.lsp_document_symbols(opts)
 end, "Telescope Document Symbols")
 
-bind("n", "<Leader>g", M.grep_prompt, "Telescope `rg` Prompt")
+-- bind("n", "<Leader>g", M.grep_prompt, "Telescope `rg` Prompt")
+bind("n", "<Leader>g", ":Telescope egrepify", "Telescope egrepify")
 bind("n", ",g", function()
     builtin.diagnostics(opts)
 end, "Telescope Diagnostics")
