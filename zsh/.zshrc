@@ -657,6 +657,7 @@ function take() {
 
 
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 bindkey '^ ' autosuggest-accept
 alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v /Users/alejandrorpascual/dotfiles/lazydocker/.config/lazydocker:/.config/jesseduffield/lazydocker lazyteam/lazydocker'
