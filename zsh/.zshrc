@@ -657,6 +657,7 @@ function take() {
 
 fpath=($HOME/.zsh/zsh-completions/src $fpath)
 source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
  source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
