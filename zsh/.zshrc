@@ -14,9 +14,12 @@ ZSH_THEME=""
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-source $ZSH/oh-my-zsh.sh
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
-plugins=(git docker docker-compose volta golang httpie tmux node rust zsh-autosuggestions)
+
+source "$ZSH/oh-my-zsh.sh"
+plugins=(git docker docker-compose volta golang httpie tmux node rust)
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
 eval "$(starship init zsh)"
 
 zstyle ':completion:*:*:docker:*' option-stacking yes
@@ -658,6 +661,8 @@ function take() {
 
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+ source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 bindkey '^ ' autosuggest-accept
 alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v /Users/alejandrorpascual/dotfiles/lazydocker/.config/lazydocker:/.config/jesseduffield/lazydocker lazyteam/lazydocker'
@@ -701,3 +706,11 @@ export SHELLBOT_PROMPT='
 '
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+
+if type brew &>/dev/null; then
+        FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+        autoload -Uz compinit
+        compinit
+fi
