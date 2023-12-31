@@ -63,7 +63,7 @@ bind("n", "<leader>ds", function()
 end, "Telescope Document Symbols")
 
 -- bind("n", "<Leader>g", M.grep_prompt, "Telescope `rg` Prompt")
-bind("n", "<Leader>g", ":Telescope egrepify", "Telescope egrepify")
+bind("n", "<Leader>g", ":Telescope egrepify<cr>", "Telescope egrepify")
 bind("n", ",g", function()
     builtin.diagnostics(opts)
 end, "Telescope Diagnostics")

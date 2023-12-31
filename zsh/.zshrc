@@ -186,6 +186,8 @@ alias pd="pushd"
 alias po="popd"
 
 # alias -g rm='rm -i'
+alias -g ncody='nvim -c "CodyChat"'
+alias -g nql='nvim -c "set ft=sql"'
 alias -g gnp="git --no-pager"
 alias -g ggh="git log --graph --oneline"
 alias -g gop="git-open"
