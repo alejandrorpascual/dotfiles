@@ -1,5 +1,5 @@
 return {
-    { "honza/vim-snippets", event = { "InsertEnter" } },
+    { "honza/vim-snippets",    event = { "InsertEnter" } },
     { "cstrap/python-snippets" },
     {
         "L3MON4D3/LuaSnip",
@@ -7,6 +7,7 @@ return {
             "hrsh7th/cmp-vsnip",
             "hrsh7th/vim-vsnip",
         },
+        version = "v2.*",
         config = function()
             require("config.luasnip")
         end,
