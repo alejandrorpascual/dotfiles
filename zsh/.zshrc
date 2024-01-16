@@ -14,7 +14,7 @@ ZSH_THEME=""
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose volta golang httpie tmux node rust)
+plugins=(git docker docker-compose volta golang httpie tmux node rust git-auto-fetch)
 source $ZSH/oh-my-zsh.sh
 eval "$(starship init zsh)"
 
