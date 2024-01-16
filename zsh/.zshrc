@@ -16,7 +16,7 @@ ZSH_THEME=""
 # Add wisely, as too many plugins slow down shell startup.
 
 source "$ZSH/oh-my-zsh.sh"
-plugins=(git docker docker-compose volta golang httpie tmux node rust)
+plugins=(git docker docker-compose volta golang httpie tmux node rust git-auto-fetch)
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
