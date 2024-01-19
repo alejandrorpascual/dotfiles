@@ -1,7 +1,3 @@
-
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the start of this file.
-#### END FIG ENV VARIABLES ####
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="~/scripts:$PATH"
 
@@ -15,8 +11,8 @@ ZSH_THEME=""
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-source "$ZSH/oh-my-zsh.sh"
 plugins=(git docker docker-compose volta golang httpie tmux node rust git-auto-fetch)
+source "$ZSH/oh-my-zsh.sh"
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
