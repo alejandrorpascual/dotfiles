@@ -4,6 +4,7 @@ return {
 
         local lspconfig = require("lspconfig")
 
+        -- FIX: CHANGE THIS TO RECGONIZE MASON LSP SERVERS AUTOMATICALLY
         local mason_servers = {}
         for server, options in pairs(ops.servers) do
             if options.enable == true then

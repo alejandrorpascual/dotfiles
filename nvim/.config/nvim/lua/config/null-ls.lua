@@ -29,14 +29,13 @@ require("mason-null-ls").setup({
 
 null_ls.setup({
     sources = {
+        null_ls.builtins.completion.spell,
         formatting.gofmt,
         diagnostics.tsc,
         formatting.prettierd,
         diagnostics.eslint_d,
-        -- add code actions
         code_actions.eslint_d,
         code_actions.gitsigns,
         code_actions.refactoring
-
     },
 })
