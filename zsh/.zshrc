@@ -177,6 +177,7 @@ CDPATH=$CDPATH:$DOTFILES/nvim/.config/nvim/
 
 CDPATH=$CDPATH:..
 
+alias fman="compgen -c | fzf | xargs man"
 alias -g dirs="dirs -v"
 alias pd="pushd"
 alias po="popd"
