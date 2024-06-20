@@ -22,9 +22,9 @@ tele.setup({
                 -- ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
                 ["<C-Down>"] = actions.cycle_history_next,
                 ["<C-UP>"] = actions.cycle_history_prev,
-                ["<c-t>"] = trouble.open_with_trouble,
+                ["<c-t>"] = require("trouble.sources.telescope").open,
             },
-            n = { ["<c-t>"] = trouble.open_with_trouble },
+            n = { ["<c-t>"] = require("trouble.sources.telescope").open },
         },
 
         -- layout_config = {

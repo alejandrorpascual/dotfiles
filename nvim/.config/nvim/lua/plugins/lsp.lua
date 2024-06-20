@@ -2,7 +2,10 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-        "nvimtools/none-ls.nvim",
+        {
+            "nvimtools/none-ls.nvim",
+            dependencies = { "nvimtools/none-ls-extras.nvim" }
+        },
         event = "VeryLazy",
         {
             "williamboman/mason.nvim",

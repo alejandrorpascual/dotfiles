@@ -7,4 +7,5 @@ return {
           imap <silent><script><expr> <C-g> copilot#Accept("\<CR>")
           ]])
     end,
+    cmd = "Copilot"
 }

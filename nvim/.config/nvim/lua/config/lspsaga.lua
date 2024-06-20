@@ -1,12 +1,6 @@
 local lspsaga = require("lspsaga")
 
-lspsaga.setup({
-    -- diagnostic_message_format = "[%s] - %m %c",
-    -- event = "LspAttach",
-    diagnostic = {
-        show_source = true,
-    },
-})
+lspsaga.setup({})
 
 bind("n", "<Leader>e", "<cmd>Lspsaga show_line_diagnostics<CR>")
 
@@ -30,3 +24,11 @@ bind("n", "<C-b>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1
 bind("n", "<Leader>cpd", "<cmd>Lspsaga preview_definition<CR>")
 -- line diagnostics
 bind("n", "<Leader>cld", "<cmd>Lspsaga show_line_diagnostics<CR>")
+
+bind("n", "[E", function()
+    require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+end, "Prev Error")
+
+bind("n", "]E", function()
+    require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
+end, "Next Error")
