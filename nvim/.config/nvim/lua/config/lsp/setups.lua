@@ -6,6 +6,10 @@ local lsp_flags = {
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = false
+}
 
 local rt = require("rust-tools")
 
@@ -48,6 +52,22 @@ return setmetatable({
     --         },
     --     }
     -- end,
+
+    yamlls = function()
+        return {
+            capabilities = capabilities,
+            on_attach = function(client, bufnr)
+                client.server_capabilities.documentFormattingProvider = false
+                on_attach(client, bufnr)
+            end,
+            settings = {
+                yaml = {
+                    schemas = require("schemastore").yaml.schemas(),
+                    validate = { enable = true },
+                },
+            },
+        }
+    end,
     jsonls = function()
         return {
             capabilities = capabilities,

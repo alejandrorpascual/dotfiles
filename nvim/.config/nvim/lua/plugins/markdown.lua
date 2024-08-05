@@ -1,24 +1,10 @@
 return {
-    "toppair/peek.nvim",
-    build = "deno task --quiet build:fast",
-    keys = {
-        {
-            "<leader>op",
-            function()
-                local peek = require("peek")
-                if peek.is_open() then
-                    peek.close()
-                else
-                    peek.open()
-                end
-            end,
-            desc = "Peek (Markdown Preview)",
-        },
-    },
-    -- opts = { theme = "dark" },
-    config = function()
-        require("peek").setup({})
-        vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
-        vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
-    end,
+    'MeanderingProgrammer/markdown.nvim',
+    enabled = false,
+    main = "render-markdown",
+    opts = {},
+    name = 'render-markdown',                                                       -- Only needed if you have another plugin named markdown.nvim
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' },     -- if you use the mini.nvim suite
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
 }

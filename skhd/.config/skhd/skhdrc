@@ -109,3 +109,12 @@ ctrl + cmd - l : yabai -m window east --resize left:20:0 2> /dev/null || yabai -
 
 # toggle sticky(+float), topmost, picture-in-picture
 cmd + alt - p : yabai -m window --toggle sticky --toggle topmost --toggle pip
+
+shift + alt - o : open -a /Applications/Obsidian.app/Contents/MacOS/Obsidian
+
+alt - w : open -a /Applications/WhatsApp.app/Contents/MacOS/WhatsApp
+
+alt - c : open -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+
+alt - t : open -a /Applications/TablePlus.app/Contents/MacOS/TablePlus
+

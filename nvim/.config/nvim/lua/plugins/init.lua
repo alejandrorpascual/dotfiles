@@ -14,6 +14,14 @@ return {
     -- for list of diagnostics
     "folke/lsp-colors.nvim",
 
+    -- for writers
+    {
+        "preservim/vim-pencil",
+        config = function()
+            vim.g['pencil#textwidth'] = 60
+        end
+    },
+
     -- navigation
     { "christoomey/vim-tmux-navigator" },
 
@@ -48,7 +56,6 @@ return {
     },
 
     -- { "p00f/nvim-ts-rainbow" },
-
     { "numToStr/FTerm.nvim" },
 
     -- twoslash for typescript

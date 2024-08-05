@@ -1,78 +1,69 @@
-local M = {
+return {
     "folke/noice.nvim",
     event = "VeryLazy",
-    enabled = false
-}
+    enabled = true,
+    dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
+    config = function(_, opts)
+        require("noice").setup(opts)
+        local wk = require("which-key")
 
-function M.config()
-    local focused = true
-    vim.api.nvim_create_autocmd("FocusGained", {
-        callback = function()
-            focused = true
-        end,
-    })
-    vim.api.nvim_create_autocmd("FocusLost", {
-        callback = function()
-            focused = false
-        end,
-    })
-    require("noice").setup({
-        debug = false,
+        wk.add({
+            { "<leader>n",  group = "Noice", },
+            { "<leader>nl", function() require('noice').cmd('last') end,      desc = "Last" },
+            { "<leader>nh", function() require('noice').cmd('history') end,   desc = "History" },
+            { "<leader>nt", function() require('noice').cmd('telescope') end, desc = "Telescope" },
+        })
+    end,
+    opts = {
         lsp = {
-            override = {
-                ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-                ["vim.lsp.util.stylize_markdown"] = true,
-                ["cmp.entry.get_documentation"] = true,
-            },
+            hover = {
+                enabled = false,
+            }
         },
-        routes = {
-            {
-                filter = {
-                    cond = function()
-                        return not focused
-                    end,
-                },
-                view = "notify_send",
-                opts = { stop = false },
-            },
-            {
-                filter = {
-                    event = "msg_show",
-                    find = "%d+L, %d+B",
-                },
-                view = "mini",
-            },
-        },
+        --     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+        --     override = {
+        --         ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+        --         ["vim.lsp.util.stylize_markdown"] = true,
+        --         ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+        --     },
+        -- },
+        -- you can enable a preset for easier configuration
         presets = {
-            bottom_search = true,
-            command_palette = true,
-            long_message_to_split = true,
-            inc_rename = true,
-            cmdline_output_to_split = false,
+            bottom_search = true,         -- use a classic bottom cmdline for search
+            command_palette = true,       -- position the cmdline and popupmenu together
+            long_message_to_split = true, -- long messages will be sent to a split
+            inc_rename = false,           -- enables an input dialog for inc-rename.nvim
+            lsp_doc_border = false,       -- add a border to hover docs and signature help
         },
-        commands = {
-            all = {
-                -- options for the message history that you get with `:Noice`
-                view = "split",
-                opts = { enter = true, format = "details" },
-                filter = {},
+        views = {
+            cmdline_popup = {
+                position = {
+                    row = 5,
+                    col = "50%",
+                },
+                size = {
+                    width = 60,
+                    height = "auto",
+                },
+            },
+            popupmenu = {
+                relative = "editor",
+                position = {
+                    row = 8,
+                    col = "50%",
+                },
+                size = {
+                    width = 60,
+                    height = 10,
+                },
+                border = {
+                    style = "rounded",
+                    padding = { 0, 1 },
+                },
+                win_options = {
+                    winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
+                },
             },
         },
-        format = {
-            level = {
-                icons = false,
-            },
-        },
-    })
-
-    vim.api.nvim_create_autocmd("FileType", {
-        pattern = "markdown",
-        callback = function(event)
-            vim.schedule(function()
-                require("noice.text.markdown").keys(event.buf)
-            end)
-        end,
-    })
-end
-
-return M
+    }
+}

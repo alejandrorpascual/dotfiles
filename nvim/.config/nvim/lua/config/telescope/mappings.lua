@@ -10,8 +10,8 @@ end
 
 function M.find_notes()
     file_browser({
-        prompt_title = " Note Browsing",
-        cwd = "~/notes/",
+        prompt_title = " Obsidian Browsing",
+        cwd = "~/Obsidian/vaults",
     })
 end
 
@@ -49,8 +49,11 @@ function M.nvim_config()
     })
 end
 
-local opts = { layout_strategy = "vertical", layout_config = { width = 0.65, prompt_position = "top" },
-    sorting_strategy = "ascending" }
+local opts = {
+    layout_strategy = "vertical",
+    layout_config = { width = 0.65, prompt_position = "top" },
+    sorting_strategy = "ascending"
+}
 
 bind("n", "<Leader>ff", function()
     builtin.find_files(opts)
@@ -62,8 +65,18 @@ bind("n", "<leader>ds", function()
     builtin.lsp_document_symbols(opts)
 end, "Telescope Document Symbols")
 
--- bind("n", "<Leader>g", M.grep_prompt, "Telescope `rg` Prompt")
-bind("n", "<Leader>g", ":Telescope egrepify<cr>", "Telescope egrepify")
+-- Egrepify
+bind("n", "<Leader>gj", ":Telescope egrepify<cr>", "Telescope egrepify")
+
+bind("n", "<Leader>gno", function()
+    require("telescope").extensions.egrepify.egrepify({ cwd = "~/obsidian/vaults/old" })
+end, "Telescope egrepify obsidian")
+
+bind("n", "<Leader>gnp", function()
+    require("telescope").extensions.egrepify.egrepify({ cwd = "~/obsidian/vaults/personal" })
+end, "Telescope egrepify obsidian")
+
+
 bind("n", ",g", function()
     builtin.diagnostics(opts)
 end, "Telescope Diagnostics")
@@ -112,7 +125,7 @@ bind("n", "<Leader>fd", function()
     M.grep_nvim_src()
 end, "Telescope Grep Neovim Source")
 -- bind("n", "<Leader>fs", [[<cmd> lua require'config.telescope'.search_snippets()<cr>]])
-bind("n", "<Leader>tt", "<cmd>TodoTelescope<cr>", "Telescope Todos")
+bind("n", "<Leader>tr", "<cmd>TodoTelescope<cr>", "Telescope Todos")
 
 -- remap to open the Telescope refactoring menu in visual mode
 bind(

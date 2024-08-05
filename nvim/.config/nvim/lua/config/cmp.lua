@@ -1,22 +1,7 @@
-print("CMP EXECUTED")
 vim.o.completeopt = "menu,menuone,noselect,noinsert"
-local api = vim.api
+vim.opt.shortmess:append "c"
 
-local function get_module(module_str)
-    local ok, module = pcall(require, module_str)
-    if not ok then
-        return nil
-    end
-    return module
-end
 
-local t = function(str)
-    return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
-
-local function feed(key, mode)
-    api.nvim_feedkeys(t(key), mode or "", true)
-end
 
 local lspkind = require("lspkind")
 lspkind.init()
@@ -26,43 +11,6 @@ if not cmp then
     return
 end
 
-
-local function tab(fallback)
-    local luasnip = get_module("luasnip")
-    local copilot_keys = vim.fn["copilot#Accept"]()
-    if cmp.visible() then
-        cmp.select_next_item()
-    elseif copilot_keys ~= "" then -- prioritise copilot over snippets
-        -- Copilot keys do not need to be wrapped in termcodes
-        api.nvim_feedkeys(copilot_keys, "i", true)
-    elseif luasnip and luasnip.expand_or_locally_jumpable() then
-        luasnip.expand_or_jump()
-    elseif api.nvim_get_mode().mode == "c" then
-        fallback()
-    else
-        feed("<Plug>(Tabout)")
-    end
-end
-
-local function shift_tab(fallback)
-    local luasnip = get_module("luasnip")
-    if cmp.visible() then
-        cmp.select_prev_item()
-    elseif luasnip and luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-    elseif api.nvim_get_mode().mode == "c" then
-        fallback()
-    else
-        local copilot_keys = vim.fn["copilot#Accept"]()
-        if copilot_keys ~= "" then
-            feed(copilot_keys, "i")
-        else
-            feed("<Plug>(Tabout)")
-        end
-    end
-end
-
-
 cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
@@ -70,15 +18,10 @@ cmp.setup({
             require("luasnip").lsp_expand(args.body)
         end,
     },
-    mapping = cmp.mapping.preset.insert({
-        -- ["<Tab>"] = cmp.mapping(tab, { "i", "c" }),
-        -- ["<S-Tab>"] = cmp.mapping(shift_tab, { "i", "c" }),
-        -- s
-        -- ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-
-        ["<C-f>"] = cmp.mapping.scroll_docs(4),
-        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-        -- ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+    mapping = {
+        ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+        ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }), -- previous suggestion
+        ["<C-e>"] = cmp.mapping.close(),
         ["<C-Space>"] = cmp.mapping(function()
             if cmp.visible() then
                 cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })
@@ -86,43 +29,14 @@ cmp.setup({
                 cmp.complete()
             end
         end, { "i", "s" }),
-        -- ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-        -- ["<C-e>"] = cmp.mapping({
-        --     i = cmp.mapping.abort(),
-        --     c = cmp.mapping.close(),
-        -- }),
-        -- ["<CR>"] = cmp.mapping.confirm({
-        --     select = true,
-        --     behavior = cmp.SelectBehavior.Replace,
-        -- }),
-    }),
-    sources = cmp.config.sources({
-        { name = "nvim_lsp",   priority = 100 },
-        { name = "cody" },
-        { name = "luasnip",    priority = 90 },
-        { name = "buffer",     priority = 80 },
-        { name = "path",       priority = 70 },
-        { name = "nvim_lua",   priority = 60 },
-        { name = "treesitter", priority = 50 },
-        { name = "emoji",      priority = 40 },
-        { name = "calc",       priority = 30 },
-        { name = "copilot",    priority = 20 },
-        { name = "jupynium",   priority = 1000 },
-    }),
-    sorting = {
-        priority_weight = 2,
-        comparators = {
-            cmp.config.compare.score,
-            cmp.config.compare.recently_used,
-            cmp.config.compare.locality,
-            cmp.config.compare.offset,
-            cmp.config.compare.exact,
-            cmp.config.compare.kind,
-            cmp.config.compare.sort_text,
-            cmp.config.compare.length,
-            cmp.config.compare.order,
-        },
     },
+    sources = cmp.config.sources({
+        { name = "nvim_lsp" },
+        { name = "cody" },
+        { name = "luasnip", },
+        { name = "buffer", },
+        { name = "path", },
+    }),
     formatting = {
         fields = { "abbr", "kind", "menu" },
         format = lspkind.cmp_format({
@@ -165,11 +79,9 @@ cmp.setup.cmdline(":", {
     }),
 })
 
-local autocomplete_group = vim.api.nvim_create_augroup("vimrc_autocompletion", { clear = true })
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "sql", "mysql", "plsql" },
-    callback = function()
-        cmp.setup.buffer({ sources = { { name = "vim-dadbod-completion" } } })
-    end,
-    group = autocomplete_group,
+cmp.setup.filetype({ "sql" }, {
+    sources = {
+        { name = "vim-dadbod-completion" },
+        { name = "buffer" },
+    },
 })

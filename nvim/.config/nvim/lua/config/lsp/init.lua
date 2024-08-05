@@ -2,6 +2,15 @@ return {
     setup = function(ops)
         ops = vim.tbl_deep_extend("force", require("config.lsp.default"), ops)
 
+        local group = vim.api.nvim_create_augroup("__env", { clear = true })
+        vim.api.nvim_create_autocmd("BufEnter", {
+            pattern = ".env",
+            group = group,
+            callback = function(args)
+                vim.diagnostic.disable(args.buf)
+            end
+        })
+
         local lspconfig = require("lspconfig")
 
         -- FIX: CHANGE THIS TO RECGONIZE MASON LSP SERVERS AUTOMATICALLY
@@ -31,7 +40,6 @@ return {
         end
 
         -- TODO: implement null ls with options
-        require("config.null-ls")
 
         local servers = {}
         for server, options in pairs(ops.servers) do

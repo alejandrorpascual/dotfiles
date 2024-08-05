@@ -48,6 +48,20 @@ return {
                 require("trouble").prev({ mode = "diagnostics" })
             end,
             desc = "Previous trouble/quickfix item",
-        }
+        },
+        {
+            "]x",
+            function()
+                require("trouble").next({ mode = "telescope" })
+            end,
+            desc = "Next trouble/quickfix item",
+        },
+        {
+            "[x",
+            function()
+                require("trouble").prev({ mode = "telescope" })
+            end,
+            desc = "Previous trouble/quickfix item",
+        },
     },
 }

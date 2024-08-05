@@ -16,6 +16,7 @@ return {
         "sudormrfbin/cheatsheet.nvim",
         "fhill2/telescope-ultisnips.nvim",
         "jvgrootveld/telescope-zoxide",
+        'nvim-telescope/telescope-ui-select.nvim',
         "xiyaowong/telescope-emoji.nvim",
         {
             "fdschmidt93/telescope-egrepify.nvim",

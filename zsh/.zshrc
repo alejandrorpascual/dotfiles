@@ -185,6 +185,10 @@ alias po="popd"
 # alias -g rm='rm -i'
 alias ncody='nvim -c "CodyChat"'
 alias nql='nvim -c "set ft=sql"'
+
+alias -g cody="nvim -c 'CodyChat'"
+alias -g tele="nvim -c 'Telescope find_files'"
+
 alias -g gnp="git --no-pager"
 alias -g ggh="git log --graph --oneline"
 alias -g gop="git-open"

@@ -132,7 +132,7 @@ local toggle_inlay_hints = function()
     vim.lsp.inlay_hint(buf, nil)
 end
 
-bind("n", "<leader>i", toggle_inlay_hints)
+-- bind("n", "<leader>i", toggle_inlay_hints)
 
 vim.cmd([[
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'

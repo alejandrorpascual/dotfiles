@@ -1,10 +1,10 @@
 return {
     "folke/styler.nvim",
-    event = "VeryLazy",
+    lazy = true,
     opts = {
         themes = {
             markdown = { colorscheme = "catppuccin" },
-            help = { colorscheme = "nordfox" },
+            help = { colorscheme = "catppuccin", background = "dark" },
         },
     },
 }

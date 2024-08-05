@@ -53,7 +53,7 @@ vim.opt.smartcase = true
 
 -- splits
 vim.opt.splitbelow = true
-vim.opt.splitright = true
+vim.opt.splitright = false
 
 vim.g.user_emmet_leader_key = ","
 vim.g.fieleencoding = "utf-8"
@@ -76,7 +76,7 @@ vim.g.fieleencoding = "utf-8"
 -- vim.g.tokyonight_style = "night"
 
 -- markdown
-vim.opt.conceallevel = 2
+vim.opt.conceallevel = 1
 
 -- ========================= NeoTerm settings end ================
 -- ===============================================================

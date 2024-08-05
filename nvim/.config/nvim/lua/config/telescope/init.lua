@@ -23,6 +23,7 @@ tele.setup({
                 ["<C-Down>"] = actions.cycle_history_next,
                 ["<C-UP>"] = actions.cycle_history_prev,
                 ["<c-t>"] = require("trouble.sources.telescope").open,
+                -- ["<C-a>"] = actions.create,
             },
             n = { ["<c-t>"] = require("trouble.sources.telescope").open },
         },
@@ -89,3 +90,4 @@ tele.load_extension("emoji")
 tele.load_extension("refactoring")
 tele.load_extension("file_browser")
 tele.load_extension("egrepify")
+tele.load_extension("ui-select")

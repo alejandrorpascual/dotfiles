@@ -1,7 +1,7 @@
 return {
     "j-hui/fidget.nvim",
     -- turn off momentarily
-    -- enabled = false,
+    enabled = false,
     tag = "legacy",
     event = "LspAttach",
     config = function()

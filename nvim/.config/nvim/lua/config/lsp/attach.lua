@@ -1,9 +1,6 @@
 return function(client, bufnr)
-    local ops = { buffer = bufnr, remap = false }
+    -- local ops = { buffer = bufnr, remap = false }
 
-    local nnoremap = function(lhs, rhs)
-        vim.keymap.set("n", lhs, rhs, ops)
-    end
 
     --   if client.server_capabilities.inlayHintProvider then
     --     vim.lsp.inlay_hint(bufnr, true)
@@ -11,30 +8,30 @@ return function(client, bufnr)
 
     if client.name == "tsserver" then
         require("twoslash-queries").attach(client, bufnr)
-        nnoremap("<Leader><Leader>k", "<cmd>InspectTwoslashQueries<CR>")
+        bind("n", "<Leader><Leader>k", "<cmd>InspectTwoslashQueries<CR>", "Inspect Twoslash Queries")
     end
 
-    nnoremap("<space>wl", function()
+    bind("n", "<space>wl", function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders))
-    end)
+    end, "LSP list workspace folders")
 
-    nnoremap("gD", vim.lsp.buf.declaration)
-    nnoremap("gd", vim.lsp.buf.definition)
-
-    nnoremap("gy", vim.lsp.buf.implementation)
-    nnoremap("<Leader>K", vim.lsp.buf.signature_help) -- builtin lsp
-    nnoremap("<space>wa", vim.lsp.buf.add_workspace_folder)
-    nnoremap("<space>wk", vim.lsp.buf.remove_workspace_folder)
+    -- nnoremap("gD", vim.lsp.buf.declaration)
+    -- nnoremap("gd", vim.lsp.buf.definition)
+    --
+    -- nnoremap("gy", vim.lsp.buf.implementation)
+    -- nnoremap("<Leader>K", vim.lsp.buf.signature_help) -- builtin lsp
+    -- nnoremap("<space>wa", vim.lsp.buf.add_workspace_folder)
+    -- nnoremap("<space>wk", vim.lsp.buf.remove_workspace_folder)
     -- nnoremap("<space>D", vim.lsp.buf.type_definition)
-    nnoremap("<space>rn", vim.lsp.buf.rename)
-    nnoremap("<leader>sg", vim.lsp.buf.signature_help)
-    nnoremap("gr", vim.lsp.buf.references)
-    nnoremap("[d", vim.diagnostic.goto_prev)
-    nnoremap("]d", vim.diagnostic.goto_next)
-    nnoremap("<space>lc", vim.diagnostic.setloclist)
-    nnoremap("<space>q", vim.diagnostic.setqflist)
+    -- bind("n", "<space>rn", vim.lsp.buf.rename, { buffer = bufnr, desc = "LSP Rename" })
+    -- nnoremap("<leader>sg", vim.lsp.buf.signature_help)
+    -- nnoremap("gr", vim.lsp.buf.references)
+    -- nnoremap("[d", vim.diagnostic.goto_prev)
+    -- nnoremap("]d", vim.diagnostic.goto_next)
+    bind("n", "<space>lc", vim.diagnostic.setloclist, "LSP setloclist")
+    bind("n", "<space>q", vim.diagnostic.setqflist, "LSP setqflist")
 
-        vim.keymap.set("n", "<leader>f", function()
+    vim.keymap.set("n", "<leader><leader>f", function()
         return vim.lsp.buf.format({
             async = true,
         })
