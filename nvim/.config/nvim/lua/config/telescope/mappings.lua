@@ -61,7 +61,7 @@ end, "Telescope Find Files")
 bind("n", "<Leader>fb", function()
     builtin.buffers(opts)
 end, "Telescope Buffers")
-bind("n", "<leader>ds", function()
+bind("n", "<leader><leader>s", function()
     builtin.lsp_document_symbols(opts)
 end, "Telescope Document Symbols")
 

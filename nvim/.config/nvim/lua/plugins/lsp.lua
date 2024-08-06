@@ -27,7 +27,6 @@ return {
             },
         },
         "b0o/schemastore.nvim",
-        "folke/neodev.nvim",
         "williamboman/mason-lspconfig.nvim",
         "jayp0521/mason-null-ls.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",

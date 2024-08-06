@@ -6,7 +6,7 @@ return {
     servers = {
         prismals = { enable = true },
         jsonls = { enable = true },
-        lua_ls = { enable = true, neodev = true },
+        lua_ls = { enable = true },
         rust_analyzer = { enable = true },
         tailwindcss = { enable = true },
         tsserver = { enable = true },

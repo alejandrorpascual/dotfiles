@@ -15,9 +15,13 @@ function M.setup()
     -- require("nvim-dap-virtual-text").setup()
 
     -- nvim-dap-ui
-    require("dapui").setup({})
+    local ui = require("dapui")
+    ui.setup()
 
-    -- languages
+    -- go
+    require("dap-go").setup()
+
+    -- javascript
     -- require("config.dap.node").setup()
     require("config.dap.javascript").setup()
 
@@ -25,46 +29,73 @@ function M.setup()
     vim.fn.sign_define("DapBreakpoint", { text = "🟥", texthl = "", linehl = "", numhl = "" })
     vim.fn.sign_define("DapStopped", { text = "⭐️", texthl = "", linehl = "", numhl = "" })
 
-    bind("n", "<leader>dsv", '<cmd>lua require"dap".step_over()<CR>', "DAP: Step over")
-    bind("n", "<leader>dco", '<cmd>lua require"dap".continue()<CR>', "DAP: Continue")
-    bind("n", "<leader>dsi", '<cmd>lua require"dap".step_into()<CR>', "DAP: Step into")
-    bind("n", "<leader>dso", '<cmd>lua require"dap".step_out()<CR>', "DAP: Step out")
-    bind("n", "<leader>dtb", '<cmd>lua require"dap".toggle_breakpoint()<CR>', "DAP: Toggle breakpoint")
-    bind(
-        "n",
-        "<leader>dsbr",
-        '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>',
-        "DAP: Set breakpoint"
-    )
-    bind(
-        "n",
-        "<leader>dsbm",
-        '<cmd>lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<CR>',
-        "DAP: Set log point"
-    )
-    bind("n", "<leader>dro", '<cmd>lua require"dap".repl.open()<CR>', "DAP: Open REPL")
-    bind("n", "<leader>drl", '<cmd>lua require"dap".repl.run_last()<CR>', "DAP: Run last REPL command")
+    local wk = require("which-key")
+    local dap = require('dap')
 
-    -- telescope-dap
-    bind("n", "<leader>dcc", '<cmd>lua require"telescope".extensions.dap.commands{}<CR>', "Telescope: DAP commands")
-    bind(
-        "n",
-        "<leader>dcf",
-        '<cmd>lua require"telescope".extensions.dap.configurations{}<CR>',
-        "Telescope: DAP configurations"
-    )
-    bind(
-        "n",
-        "<leader>dlb",
-        '<cmd>lua require"telescope".extensions.dap.list_breakpoints{}<CR>',
-        "Telescope: DAP list breakpoints"
-    )
-    bind("n", "<leader>dv", '<cmd>lua require"telescope".extensions.dap.variables{}<CR>', "Telescope: DAP variables")
-    bind("n", "<leader>df", '<cmd>lua require"telescope".extensions.dap.frames{}<CR>', "Telescope: DAP frames")
+    wk.add({
+        { "<leader>d",  group = "DAP" },
+        { "<leader>dc", dap.continue,          desc = "Continue" },
+        { "<leader>db", dap.toggle_breakpoint, desc = "Toggle breakpoint" },
+        { "<leader>df", dap.step_over,         desc = "Step Over" },
+        { "<leader>di", dap.step_into,         desc = "Step Into" },
+        { "<leader>do", dap.step_out,          desc = "Step Out" },
+        { "<leader>dj", dap.down,              desc = "Down" },
+        { "<leader>dk", dap.up,                desc = "Up" },
+        { "<leader>dx", dap.terminate,         desc = "Terminate" },
+        { "<leader>dz", dap.disconnect,        desc = "Disconnect" },
 
-    bind("n", "<leader>dsr", '<cmd>lua require"dap".restart()<CR>', "DAP: Restart")
-    -- toggle dap ui
-    bind("n", "<leader>dtu", '<cmd>lua require"dapui".toggle()<CR>', "DAP: Toggle UI")
+        {
+            "<leader>dB",
+            function()
+                dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
+            end,
+            desc = "Breakpoint with condition"
+        },
+        { "<leader>dn",  dap.run_to_cursor,                                   desc = "Run to cursor" },
+        {
+            "<leader>dm",
+            function()
+                dap.set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
+            end,
+            desc = "Set breakpoint with message"
+        },
+
+        { "<leader>dt",  group = "DAP Telescope" },
+        { "<leader>dtc", require "telescope".extensions.dap.commands,         desc = "Commands" },
+        { "<leader>dtb", require "telescope".extensions.dap.list_breakpoints, desc = "List breakpoints" },
+        { "<leader>dtv", require "telescope".extensions.dap.variables,        desc = "Variables" },
+        { "<leader>dtf", require "telescope".extensions.dap.frames,           desc = "Frames" },
+
+        -- restart
+        { "<leader>ds",  require("dap").restart,                              desc = "Restart" },
+
+        -- toggle dap ui
+        { "<leader>du",  ui.toggle,                                           desc = "Toggle UI" },
+        --    vim.keymap.set("n", "<space>?", function()
+        -- require("dapui").eval(nil, { enter = true })
+        -- end)
+        {
+            "<leader>d?",
+            function()
+                ui.eval(nil, { enter = true, width = 60, height = 25 })
+            end,
+            desc = "DAP show value"
+        }
+
+    })
+
+    dap.listeners.before.attach.dapui_config = function()
+        ui.open()
+    end
+    dap.listeners.before.launch.dapui_config = function()
+        ui.open()
+    end
+    dap.listeners.before.event_terminated.dapui_config = function()
+        ui.close()
+    end
+    dap.listeners.before.event_exited.dapui_config = function()
+        ui.close()
+    end
 end
 
 return M

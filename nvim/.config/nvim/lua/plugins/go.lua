@@ -11,11 +11,19 @@ return {
             run_in_floaterm = true,
             lsp_keymaps = false,
         })
+
+        local wk = require("which-key")
+        wk.add({
+            { "<leader>r",  group = "Go Nvim 1" },
+            { "<leader>rt", ":GoTest<CR>",                       desc = "Go test current file" },
+            { "<leader>rw", ":GoTermClose<CR>",                  desc = "Go exit terminal" },
+            { "<leader>g",  group = "Go Nvim 2" },
+            { "<leader>gg", ":GoRun<CR>",                        desc = "Go run" },
+            { "<leader>gf", ":GoTestFunc<CR>",                   desc = "Go test function" },
+            { "<leader>ga", require 'go.gopls'.change_signature, desc = 'Go change signature', mode = { "v" } },
+        })
+
         bind('v', '<leader>ga', require 'go.gopls'.change_signature, 'Go change signature')
-        bind('n', '<leader>rt', ':GoTestSum<CR>', 'Go test current file')
-        bind('n', '<leader>rw', ':GoTermClose<CR>', 'Go exit terminal')
-        bind('n', '<leader>gf', ':GoTestFunc<CR>', 'Go exit terminal')
-        bind('n', '<leader>gg', ':GoRun<CR>', 'Go exit terminal')
     end,
     event = { "CmdlineEnter" },
     ft = { "go", 'gomod' },

@@ -58,7 +58,7 @@ return {
                 { key = '<Space>D',      func = vim.lsp.buf.type_definition,                             desc = 'Navigator type_definition' },
                 { key = 'gL',            func = require('navigator.diagnostics').show_diagnostics,       desc = 'Navigator show_diagnostics' },
                 { key = 'gG',            func = require('navigator.diagnostics').show_buf_diagnostics,   desc = 'Navigator show_buf_diagnostics' },
-                { key = '<Leader>dt',    func = require('navigator.diagnostics').toggle_diagnostics,     desc = 'Navigator toggle_diagnostics' },
+                { key = '<Leader>td',    func = require('navigator.diagnostics').toggle_diagnostics,     desc = 'Navigator toggle_diagnostics' },
                 { key = ']d',            func = require('navigator.diagnostics').goto_next,              desc = 'Navigator next diagnostics error or fallback' },
                 { key = '[d',            func = require('navigator.diagnostics').goto_prev,              desc = 'Navigator prev diagnostics error or fallback' },
                 { key = ']O',            func = vim.diagnostic.set_loclist,                              desc = 'Navigator diagnostics set loclist' },
