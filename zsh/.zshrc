@@ -177,6 +177,14 @@ CDPATH=$CDPATH:$DOTFILES/nvim/.config/nvim/
 
 CDPATH=$CDPATH:..
 
+alias -g owui="docker run -d \
+        -p 2716:8080 \
+        --add-host=host.docker.internal:host-gateway \
+        -v open-webui:/app/backend/data \
+        --name open-webui \
+        --restart always \
+        ghcr.io/open-webui/open-webui:main"
+
 alias fman="compgen -c | fzf | xargs man"
 alias -g dirs="dirs -v"
 alias pd="pushd"
@@ -402,11 +410,17 @@ function gcamsg() {
     git add . && git commit -m "$*"
 }
 
+function gcamsgp() {
+    git add . && git commit -m "$*" && git push
+}
+
 function wip() { gcamsg "wip" }
+function wipp() { gcamsg "wip" && git push }
 
 function gamsg() {
     git add $1 && git commit -m "${@:2}"
 }
+
 
 # NEW.
 function gnew() {
@@ -785,6 +799,16 @@ function drm() {
 # Select a docker image or images to remove
 function drmi() {
   docker images | sed 1d | fzf -q "$1" --no-sort -m --tac | awk '{ print $3 }' | xargs -r docker rmi
+}
+
+# new obsidian node from nvim
+function nobs() {
+        if [ -z "$1" ]; then
+                echo "Usage: nobs <filename>"
+                return
+        fi
+
+        nvim -c "ObsidianNew $1"
 }
 
 # c - browse chrome history

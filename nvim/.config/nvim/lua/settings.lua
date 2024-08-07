@@ -1,3 +1,4 @@
+local utils = require('utils')
 -- *****************************************************************
 --                             OPTIONS
 -- *****************************************************************
@@ -10,11 +11,16 @@ set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
 vim.o.textwidth = 75
 vim.cmd([[set formatoptions-=t]])
 -- vim.o.formatoptions -= "t"
+--
+--
+vim.g.is_win          = (utils.has("win32") or utils.has("win64")) and true or false
+vim.g.is_linux        = (utils.has("unix") and (not utils.has("macunix"))) and true or false
+vim.g.is_mac          = utils.has("macunix") and true or false
 
-vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-vim.o.foldlevelstart = 99
-vim.o.foldenable = true
-vim.o.foldcolumn = "0"
+vim.o.foldlevel       = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart  = 99
+vim.o.foldenable      = true
+vim.o.foldcolumn      = "0"
 
 vim.opt.termguicolors = true
 

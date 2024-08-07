@@ -1,3 +1,5 @@
+local model = "llama3.1"
+
 return {
     "olimorris/codecompanion.nvim",
     dependencies = {
@@ -22,7 +24,7 @@ return {
                 return require("codecompanion.adapters").use("ollama", {
                     schema = {
                         model = {
-                            default = "codestral:latest",
+                            default = model,
                         },
 
                     },

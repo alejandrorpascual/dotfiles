@@ -1,5 +1,6 @@
 return {
     "tpope/vim-dadbod",
+    enabled = false,
     cmd = { "DB", "DBUI" },
     dependencies = {
         {

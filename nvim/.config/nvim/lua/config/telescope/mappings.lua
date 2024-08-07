@@ -137,3 +137,5 @@ bind(
 
 -- zoxide
 bind("n", "<Leader>z", ":lua require'telescope'.extensions.zoxide.list{}<CR>", "Telescope Zoxide")
+
+vim.cmd([[cab tn Telescope notify]])

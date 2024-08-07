@@ -77,9 +77,6 @@ return {
     { "godlygeek/tabular" },
     { "plasticboy/vim-markdown" },
 
-    -- markdown support
-    { "iamcco/markdown-preview.nvim" },
-
 
     -- Automatically fix indentation when pasting code
     {

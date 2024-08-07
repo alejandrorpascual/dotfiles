@@ -15,9 +15,9 @@ return {
                     }
                 },
                 disable_lsp = {
-                    "angularls", "flow", "julials", "pylsp", "pyright",
+                    "angularls", "flow", "julials", "pylsp",
                     "jedi_language_server", "jdtls", "vimls", "html", "solargraph", "cssls",
-                    "clangd", "ccls", "denols", "graphql", "dartls", "dotls",
+                    "denols", "graphql", "dartls", "dotls",
                     "kotlin_language_server", "nimls", "intelephense", "vuels", "phpactor", "omnisharp",
                     "r_language_server", "terraformls"
                 },
