@@ -14,12 +14,6 @@ return {
         bashls = { enable = true },
     },
     default_options = function(options)
-        -- local capabilities = vim.lsp.protocol.make_client_capabilities()
-        -- capabilities.textDocument.foldingRange = {
-        --     dynamicRegistration = false,
-        --     lineFoldingOnly = false
-        -- }
-
         return vim.tbl_deep_extend("force", {
             on_attach = require("config.lsp.attach"),
             flags = require("config.lsp.flags"),
