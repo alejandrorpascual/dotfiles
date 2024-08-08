@@ -118,3 +118,5 @@ alt - c : open -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
 
 alt - t : open -a /Applications/TablePlus.app/Contents/MacOS/TablePlus
 
+alt + shift - w : open -a /Applications/WezTerm.app/Contents/MacOS/wezterm
+
