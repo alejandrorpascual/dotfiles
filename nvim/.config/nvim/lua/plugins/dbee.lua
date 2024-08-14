@@ -10,6 +10,12 @@ return {
         require("dbee").install()
     end,
     config = function()
-        require("dbee").setup( --[[optional config]])
+        local dbee = require("dbee")
+        dbee.setup( --[[optional config]])
+
+        local wk = require("which-key")
+        wk.add({
+            { "<leader>to", dbee.toggle, desc = "Toggle Dbee" },
+        })
     end,
 }

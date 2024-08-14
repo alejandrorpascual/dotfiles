@@ -2,7 +2,6 @@ vim.o.completeopt = "menu,menuone,noselect,noinsert"
 vim.opt.shortmess:append "c"
 
 
-
 local lspkind = require("lspkind")
 lspkind.init()
 
@@ -33,9 +32,9 @@ cmp.setup({
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "cody" },
-        { name = "luasnip", },
-        { name = "buffer", },
-        { name = "path", },
+        { name = "luasnip" },
+        { name = "buffer" },
+        { name = "path" },
     }),
     formatting = {
         fields = { "abbr", "kind", "menu" },
@@ -50,6 +49,7 @@ cmp.setup({
                 cmdline = "[Command]",
                 luasnip = "[Luasnip]",
                 ["vim-dadbod-completion"] = "[DB]",
+                dbee = "[DB]",
             },
         }),
     },
@@ -81,6 +81,7 @@ cmp.setup.cmdline(":", {
 
 cmp.setup.filetype({ "sql" }, {
     sources = {
+        { name = "cmp-dbee" },
         { name = "vim-dadbod-completion" },
         { name = "buffer" },
     },

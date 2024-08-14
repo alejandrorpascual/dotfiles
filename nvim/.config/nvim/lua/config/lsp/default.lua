@@ -9,7 +9,7 @@ return {
         lua_ls = { enable = true },
         rust_analyzer = { enable = true },
         tailwindcss = { enable = true },
-        tsserver = { enable = true },
+        -- tsserver = { enable = true },
         htmx = { enable = true },
         bashls = { enable = true },
     },

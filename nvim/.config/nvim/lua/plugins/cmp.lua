@@ -18,7 +18,15 @@ return {
                     color_square_width = 2,
                 })
             end
-        }
+        },
+        {
+            "MattiasMTS/cmp-dbee",
+            dependencies = {
+                { "kndndrj/nvim-dbee" }
+            },
+            ft = "sql", -- optional but good to have
+            opts = {},
+        },
     },
     config = function()
         require("config.cmp")

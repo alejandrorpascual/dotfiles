@@ -52,6 +52,7 @@ return {
     -- laravel tinker in vim
     {
         "jesseleite/vim-tinkeray",
+        enabled = false,
         keys = { { "<leader>to", "<cmd>TinkerayOpen<cr>", desc = "Open Tinkeray" } },
     },
 

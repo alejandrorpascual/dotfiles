@@ -20,7 +20,7 @@ return {
                     "jedi_language_server", "jdtls", "vimls", "html", "solargraph", "cssls",
                     "denols", "graphql", "dartls", "dotls",
                     "kotlin_language_server", "nimls", "intelephense", "vuels", "phpactor", "omnisharp",
-                    "r_language_server", "terraformls"
+                    "r_language_server", "terraformls", "tsserver"
                 },
                 yamlls = {
                     settings = {
