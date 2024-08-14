@@ -39,3 +39,4 @@ require("luasnip.loaders.from_snipmate").lazy_load()
 
 require("config.luasnip.remix-run")
 require("config.luasnip.ts-test")
+require("config.luasnip.react")

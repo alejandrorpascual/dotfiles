@@ -38,6 +38,35 @@ _G.global = {
     lualineTheme = "tokyonight",
 }
 
+function _G.check_formatters()
+    local clients = vim.lsp.get_clients()
+    for _, client in ipairs(clients) do
+        print("Checking client " .. client.name)
+        local has_formatting_cap = client.capabilities.formatting ~= nil
+        if has_formatting_cap then
+            print(">> Client " .. client.name .. " has formatting capability")
+        end
+    end
+end
+
+function _G.conflicting_clients()
+    local clients = vim.lsp.get_clients()
+    local conflicting_clients = {}
+    for i, client1 in ipairs(clients) do
+        for j = i + 1, #clients do
+            local client2 = clients[j]
+            if client1.name ~= client2.name and client1.capabilities.formatting ~= nil then
+                table.insert(conflicting_clients, { client1, client2 })
+            end
+        end
+    end
+
+    for _, conflicting_pair in ipairs(conflicting_clients) do
+        print("hello")
+        print("Potential conflict between " .. conflicting_pair[1].name .. " and " .. conflicting_pair[2].name)
+    end
+end
+
 local reload_module = function(module_name, starts_with_only)
     local matcher
     if not starts_with_only then

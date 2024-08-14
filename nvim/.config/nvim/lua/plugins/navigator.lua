@@ -14,6 +14,7 @@ return {
                         focusable = true,
                     }
                 },
+                disable_format_cap = { "sqlls", "gopls", "tsserver", "eslint_d" }, -- a list of lsp disable format capacity (e.g. if you using efm or vim-codeformat etc), empty {} by default
                 disable_lsp = {
                     "angularls", "flow", "julials", "pylsp",
                     "jedi_language_server", "jdtls", "vimls", "html", "solargraph", "cssls",

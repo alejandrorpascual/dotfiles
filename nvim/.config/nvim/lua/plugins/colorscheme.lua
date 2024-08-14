@@ -11,7 +11,7 @@ return {
 
             -- customize()
             vim.cmd("colorscheme tokyonight-storm")
-            bind("n", "<leader>cc", ":lua toggle_colorscheme()<CR>", "Toggle colorscheme")
+            bind("n", "<leader>cc", toggle_colorscheme, "Toggle colorscheme")
         end,
     },
     {
@@ -19,7 +19,7 @@ return {
         -- dependencies = { "f-person/auto-dark-mode.nvim" },
         name = "catppuccin",
         config = function()
-            bind("n", "<leader>cc", ":lua toggle_colorscheme()<CR>", "Toggle colorscheme")
+            bind("n", "<leader>cc", toggle_colorscheme, "Toggle colorscheme")
         end,
     },
     {

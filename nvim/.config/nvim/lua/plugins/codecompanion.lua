@@ -6,6 +6,13 @@ return {
         "nvim-lua/plenary.nvim",
     },
     opts = {
+        default_prompts = {
+            ["Custom Prompt"] = {
+                opts = {
+                    mapping = "<LocalLeader>cp",
+                },
+            },
+        },
         strategies = {
             chat = {
                 adapter = "ollama",
@@ -36,25 +43,13 @@ return {
         require("codecompanion").setup(opts)
         -- Expand `cc` into CodeCompanion in the command line
         vim.cmd([[cab cc CodeCompanion]])
+
+        local wk = require("which-key")
+        wk.add({
+            { "<leader>i",  group = "CodeCompanion" },
+            { "<leader>ic", "<cmd>CodeCompanionToggle<CR>",  desc = "A[I] [C]hat" },
+            { "<leader>ia", "<cmd>CodeCompanion<CR>",        desc = "A[I] [A]sk" },
+            { "<leader>il", "<cmd>CodeCompanionActions<CR>", desc = "A[I] [L]ist of actions" },
+        })
     end,
-    keys = {
-        {
-            "<leader>ic",
-            "<cmd>CodeCompanionToggle<CR>",
-            desc = "A[I] [C]hat",
-            mode = { "n", "v" },
-        },
-        {
-            "<leader>ia",
-            "<cmd>CodeCompanion<CR>",
-            desc = "A[I] [A]sk",
-            mode = { "n", "v" },
-        },
-        {
-            "<leader>il",
-            "<cmd>CodeCompanionActions<CR>",
-            desc = "A[I] [L]ist of actions",
-            mode = { "n", "v" },
-        },
-    },
 }

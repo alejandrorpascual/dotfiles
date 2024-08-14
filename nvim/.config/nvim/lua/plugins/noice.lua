@@ -15,6 +15,25 @@ return {
         })
     end,
     opts = {
+        routes = {
+            {
+                view = "split",
+                filter = { event = "msg_show", min_height = 20 },
+            },
+            {
+                filter = { event = 'msg_show', kind = '', find = 'written' },
+                opts = { skip = true },
+            },
+            {
+                filter = { event = 'msg_show', kind = '', find = 'Modified' },
+                opts = { skip = true },
+            },
+            {
+                filter = { event = 'msg_show', kind = '', find = 'lines' },
+                opts = { skip = true },
+            },
+        },
+
         lsp = {
             hover = {
                 enabled = false,
