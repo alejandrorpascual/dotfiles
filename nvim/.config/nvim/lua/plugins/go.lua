@@ -14,13 +14,14 @@ return {
 
         local wk = require("which-key")
         wk.add({
-            { "<leader>r",  group = "Go Nvim 1" },
-            { "<leader>rt", ":GoTest<CR>",                       desc = "Go test current file" },
-            { "<leader>rw", ":GoTermClose<CR>",                  desc = "Go exit terminal" },
-            { "<leader>g",  group = "Go Nvim 2" },
-            { "<leader>gg", ":GoRun<CR>",                        desc = "Go run" },
-            { "<leader>gf", ":GoTestFunc<CR>",                   desc = "Go test function" },
-            { "<leader>ga", require 'go.gopls'.change_signature, desc = 'Go change signature', mode = { "v" } },
+            { "<leader>r",          group = "Go Nvim 1" },
+            { "<leader>rt",         ":GoTest<CR>",                       desc = "Go test current file" },
+            { "<leader><leader>rt", ":GoTestSum<CR>",                    desc = "Go test current file" },
+            { "<leader>rw",         ":GoTermClose<CR>",                  desc = "Go exit terminal" },
+            { "<leader>g",          group = "Go Nvim 2" },
+            { "<leader>gg",         ":GoRun ./...<CR>",                  desc = "Go run" },
+            { "<leader>gf",         ":GoTestFunc<CR>",                   desc = "Go test function" },
+            { "<leader>ga",         require 'go.gopls'.change_signature, desc = 'Go change signature', mode = { "v" } },
         })
 
         bind('v', '<leader>ga', require 'go.gopls'.change_signature, 'Go change signature')

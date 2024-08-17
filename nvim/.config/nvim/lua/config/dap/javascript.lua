@@ -11,11 +11,14 @@ end
 -- ╰──────────────────────────────────────────────────────────╯
 
 -- VSCODE JS (Node/Chrome/Terminal/Jest)
+local debugger_path = vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter"
+dump(debugger_path)
 require("dap-vscode-js").setup({
-    debugger_path = vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter",
+    debugger_path = debugger_path,
     debugger_cmd = { "js-debug-adapter" },
     adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" },
 })
+
 
 -- ╭──────────────────────────────────────────────────────────╮
 -- │ Configurations                                           │
