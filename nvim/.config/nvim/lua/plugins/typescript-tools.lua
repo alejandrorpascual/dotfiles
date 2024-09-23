@@ -5,7 +5,10 @@ return {
         on_attach = function(client)
             client.server_capabilities.documentFormattingProvider = false
             client.server_capabilities.documentRangeFormattingProvider = false
-        end
+        end,
+        settings = {
+            expose_as_code_action = "all"
+        }
     },
     config = function(_, opts)
         require("typescript-tools").setup(opts)

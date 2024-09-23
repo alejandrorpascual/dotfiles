@@ -70,7 +70,7 @@ return {
                 { key = '<Space>ca',     mode = 'n',                                                     func = require('navigator.codeAction').code_action,       desc = 'Navigator code_action' },
                 { key = '<Space>ca',     mode = 'v',                                                     func = require('navigator.codeAction').range_code_action, desc = 'Navigator range_code_action' },
                 -- { key = '<Leader>re', func = 'rename()' },
-                { key = '<Space>rn',     func = require('navigator.rename').rename,                      desc = 'Navigator rename' },
+                { key = '<Space>rn',     func = vim.lsp.buf.rename,                                      desc = 'Navigator rename' },
                 { key = '<Leader>gi',    func = vim.lsp.buf.incoming_calls,                              desc = 'Navigator incoming_calls' },
                 { key = '<Leader>go',    func = vim.lsp.buf.outgoing_calls,                              desc = 'Navigator outgoing_calls' },
                 { key = 'gi',            func = vim.lsp.buf.implementation,                              desc = 'Navigator implementation' }, -- insert

@@ -5,42 +5,9 @@ return {
     dependencies = {
         "nvim-lua/plenary.nvim",
     },
-    opts = {
-        default_prompts = {
-            ["Custom Prompt"] = {
-                opts = {
-                    mapping = "<LocalLeader>cp",
-                },
-            },
-        },
-        strategies = {
-            chat = {
-                adapter = "ollama",
-            },
-            inline = {
-                adapter = "ollama",
-            },
-        },
-        display = {
-            chat = {
-                show_settings = true
-            }
-        },
-        adapters = {
-            ollama = function()
-                return require("codecompanion.adapters").use("ollama", {
-                    schema = {
-                        model = {
-                            default = model,
-                        },
 
-                    },
-                })
-            end,
-        },
-    },
-    config = function(_, opts)
-        require("codecompanion").setup(opts)
+    config = function()
+        require("codecompanion").setup()
         -- Expand `cc` into CodeCompanion in the command line
         vim.cmd([[cab cc CodeCompanion]])
 

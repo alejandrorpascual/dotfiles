@@ -6,6 +6,14 @@ return {
         dependencies = {
             "hrsh7th/cmp-vsnip",
             "hrsh7th/vim-vsnip",
+            {
+                'mireq/luasnip-snippets',
+                init = function()
+                    -- Mandatory setup function
+                    require('luasnip_snippets.common.snip_utils').setup()
+                end
+
+            }
         },
         version = "v2.*",
         config = function()

@@ -56,7 +56,7 @@ bind("n", "<leader>vd", ":vs %:h/<CR>", "Open Dir Tree in directory of current f
 
 -- open quickfix / close
 bind("n", "<leader>co", ":cope<cr>")
-bind("n", "<leader>cl", ":cclose<cr>")
+-- bind("n", "<leader>cl", ":cclose<cr>")
 bind("n", "<leader>j", ":cnext<cr>")
 bind("n", "<leader>k", ":cprevious<cr>")
 

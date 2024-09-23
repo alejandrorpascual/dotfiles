@@ -6,10 +6,10 @@ return function(client, bufnr)
     --     vim.lsp.inlay_hint(bufnr, true)
     -- end
 
-    if client.name == "tsserver" then
-        require("twoslash-queries").attach(client, bufnr)
-        bind("n", "<Leader><Leader>k", "<cmd>InspectTwoslashQueries<CR>", "Inspect Twoslash Queries")
-    end
+    -- if client.name == "tsserver" then
+    --     require("twoslash-queries").attach(client, bufnr)
+    --     bind("n", "<Leader><Leader>k", "<cmd>InspectTwoslashQueries<CR>", "Inspect Twoslash Queries")
+    -- end
 
     bind("n", "<space>wl", function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders))
