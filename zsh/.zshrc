@@ -14,9 +14,12 @@ ZSH_THEME=""
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose volta golang httpie tmux node rust git-auto-fetch)
+plugins=(git docker docker-compose volta golang httpie tmux node rust git-auto-fetch direnv)
 source $ZSH/oh-my-zsh.sh
 eval "$(starship init zsh)"
+
+# Hook direnv
+eval "$(direnv hook zsh)"
 
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
@@ -261,6 +264,8 @@ alias -g l="ls --long --header --icons --git --all"
 alias -g dub="docker-compose up --build"
 alias -g dud="docker-compose up -d"
 alias -g dup="docker-compose up"
+# alias -g zed="open -a /Applications/Zed.app -n"
+
 
 set -o vi
 
@@ -271,8 +276,8 @@ export gph="$hsf/get-programming-with-haskell"
 #haskell wiki-book
 export hwb="$hsf/wiki-book"
 
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
 export fmcss="$HOME/frontend-masters/css-in-depth-v3"
 export fem="$HOME/frontend-masters"
 export scripts="$HOME/scripts"
@@ -811,6 +816,11 @@ function nobs() {
         nvim -c "ObsidianNew $1"
 }
 
+# new obsidian node from nvim
+function sobs() {
+        nvim -c "ObsidianSearch"
+}
+
 # c - browse chrome history
 edgeh() {
   local cols sep google_history open
@@ -864,3 +874,4 @@ export SHELLBOT_PROMPT='
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 eval "$(gh copilot alias -- zsh)"
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
